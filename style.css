@@ -100,8 +100,8 @@ button {
   transform: translateX(-50%);
 
   img {
-    min-width: 250px;
     width: var(--slide-width);
+    /* min-width: 250px; */
     z-index: 1;
     position: relative;
   }
@@ -120,6 +120,19 @@ button {
     -webkit-box-shadow: 0px 5px 132px 88px var(--blue-transparent);
     -moz-box-shadow: 0px 5px 132px 88px  var(--blue-transparent);
     box-shadow: 0px 5px 132px 88px  var(--blue-transparent);
+  }
+
+  .arrows {
+    position: absolute;
+    display: flex;
+    top: 60px;
+    left: 10px;
+    right: 10px;
+    justify-content: space-between;
+  }
+  .arrow {
+    max-width: 40px;
+    object-fit: contain;
   }
 }
 
@@ -151,20 +164,26 @@ button {
   display: flex;
   position: relative;
   align-items: center;
+  width: 100%;
+  overflow: hidden;
+  /* gap: 3vw; */
 
   .service {
     font-family: 'PFFusionSansPro Black';
     font-size: 20px;
     text-transform: uppercase;
-    width: 360px;
-    padding: 15px 1vh;
+    min-width: 20vw;
+    padding: 15px 8vh;
     display: grid;
     text-align: center;
     place-content: center;
     cursor: pointer;
+    position: relative;
+    transition: color .5s ease-in-out, opacity .5s ease-in-out;
+    opacity: .5;
   }
 
-  .service:nth-child(1),
+  /* .service:nth-child(1),
   .service:nth-child(7) {
     opacity: .3;
   }
@@ -172,38 +191,20 @@ button {
   .service:nth-child(2),
   .service:nth-child(6) {
     opacity: .6;
-  }
+  } */
 
-  .choosen .service {
+  .service.active {
     color: var(--black);
     position: relative;
-    margin: 0 30px;
     opacity: 1;
-    min-width: 250px;
-    width: var(--slide-width);
+  }
 
-    &::before {
-      background: url('/images/left-arrow.png');
-      left: 15px;
-    }
+  .service.secondary {
+    opacity: 1;
+  }
 
-    &::after {
-      background: url('/images/right-arrow.png');
-      right: 15px;
-    }
-
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 10px;
-      width: 40px;
-      height: 80px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+  .service.thirdy {
+    opacity: .5;
   }
 }
 
