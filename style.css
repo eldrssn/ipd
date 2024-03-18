@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('fonts/HelveticaNeueLight.otf') format('opentype');
+  src: url('/fonts/HelveticaNeueLight.otf') format('opentype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('fonts/HelveticaNeueMedium.otf') format('opentype');
+  src: url('/fonts/HelveticaNeueMedium.otf') format('opentype');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'PFFusionSansPro Black';
-  src: url('fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
+  src: url('/fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
   font-display: swap;
 }
 
@@ -183,12 +183,12 @@ button {
     width: var(--slide-width);
 
     &::before {
-      background: url('images/left-arrow.png');
+      background: url('/images/left-arrow.png');
       left: 15px;
     }
 
     &::after {
-      background: url('images/right-arrow.png');
+      background: url('/images/right-arrow.png');
       right: 15px;
     }
 
