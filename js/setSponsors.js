@@ -5,9 +5,6 @@ export function setSponsors(node, imgs, list) {
   list.forEach((el) => {
     const li = document.createElement('li');
     li.classList.add('sponsor');
-    const img = document.createElement('img');
-
-    img.src = `/assets/images/${el}.png`;
 
     li.appendChild(imgs[el]);
     fragment.appendChild(li);

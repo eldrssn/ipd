@@ -8,13 +8,17 @@ import { moveTitle } from './moveTitle.js';
 
 createTitles();
 
+const preloadedImages = document.querySelector('#preloadedImages');
+
 const carImgsHref = content.map((el) => el.carImg);
 const preloadedCarImgs = [];
 
 carImgsHref.forEach((el) => {
   const img = new Image();
   img.src = el;
+  img.alt = 'Current Car';
   preloadedCarImgs.push(img);
+  preloadedImages.append(img);
 });
 
 const sponsorNames = [
@@ -22,8 +26,10 @@ const sponsorNames = [
 ];
 
 const preloadedSponsorsImgs = sponsorNames.reduce((accum, next) => {
-  const img = new Image();
+  const img = document.createElement('img');
+  img.alt = next;
   img.src = `/assets/images/${next}.png`;
+  preloadedImages.append(img);
   accum[next] = img;
   return accum;
 }, {});
