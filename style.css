@@ -22,10 +22,10 @@
   --blue: #05a5bf;
   --blue-transparent: #5fc5f8ce;
   --header-bg-main: #09355399;
-  --header-bg-secondary:#5c8a979e;
+  --header-bg-secondary: #5c8a979e;
   --purpule: #cd05ca;
   --black: #000;
-  --white:#fff;
+  --white: #fff;
 
   --slide-width: 25vw;
 
@@ -113,12 +113,12 @@ button {
     transform: translateX(-50%);
     width: 20vw;
     background-color: var(--blue-transparent);
-    filter:blur(20px);
+    filter: blur(20px);
     height: 600px;
     border-radius: 50%;
     -webkit-box-shadow: 0px 5px 132px 88px var(--blue-transparent);
-    -moz-box-shadow: 0px 5px 132px 88px  var(--blue-transparent);
-    box-shadow: 0px 5px 132px 88px  var(--blue-transparent);
+    -moz-box-shadow: 0px 5px 132px 88px var(--blue-transparent);
+    box-shadow: 0px 5px 132px 88px var(--blue-transparent);
   }
 
   .arrows {
@@ -129,6 +129,7 @@ button {
     right: 10px;
     justify-content: space-between;
   }
+
   .arrow {
     max-width: 40px;
     object-fit: contain;
@@ -288,4 +289,28 @@ button {
     width: 80px;
     height: auto;
   }
+}
+
+
+#preloadedImages {
+  width: 0px;
+  height: 0px;
+  display: inline;
+  background-image: url('/assets/images/xpel.png'), url('/assets/images/window-tinting.png'), url("/assets/images/sonax.png"), url("/assets/images/rhinomotive.png"),
+    url("/assets/images/paint-protection.png"),
+    url("/assets/images/kpmf.png"),
+    url("/assets/images/koch.png"),
+    url("/assets/images/interior-ceramic.png"),
+    url("/assets/images/hexis.png"),
+    url("/assets/images/gyeon.png"),
+    url("/assets/images/gtechniq.png"),
+    url("/assets/images/custom-decails.png"),
+    url("/assets/images/crystal.png"),
+    url("/assets/images/colored-protection.png"),
+    url("/assets/images/carlas.png"),
+    url("/assets/images/adams.png"),
+    url("/assets/images/3m.png"),
+    url("/assets/images/ceramic.png");
+
+
 }
