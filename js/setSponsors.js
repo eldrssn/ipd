@@ -1,4 +1,4 @@
-export function setSponsors(node, list) {
+export function setSponsors(node, imgs, list) {
   node.innerHTML = '';
   const fragment = document.createDocumentFragment();
 
@@ -9,7 +9,7 @@ export function setSponsors(node, list) {
 
     img.src = `/assets/images/${el}.png`;
 
-    li.appendChild(img);
+    li.appendChild(imgs[el]);
     fragment.appendChild(li);
   });
 
