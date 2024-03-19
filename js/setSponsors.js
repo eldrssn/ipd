@@ -7,7 +7,7 @@ export function setSponsors(node, list) {
     li.classList.add('sponsor');
     const img = document.createElement('img');
 
-    img.src = `/assets/images/${el}.png`;
+    img.src = `assets/images/${el}.png`;
 
     li.appendChild(img);
     fragment.appendChild(li);

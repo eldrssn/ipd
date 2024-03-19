@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/public/fonts/HelveticaNeueLight.otf') format('opentype');
+  src: url('public/fonts/HelveticaNeueLight.otf') format('opentype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/public/fonts/HelveticaNeueMedium.otf') format('opentype');
+  src: url('public/fonts/HelveticaNeueMedium.otf') format('opentype');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'PFFusionSansPro Black';
-  src: url('/public/fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
+  src: url('public/fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
   font-display: swap;
 }
 
@@ -63,7 +63,7 @@ button {
 
 .main-page {
   min-height: 100vh;
-  background: url('/assets/images/background.jpg');
+  background: url('assets/images/background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
