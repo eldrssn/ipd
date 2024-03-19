@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/fonts/HelveticaNeueLight.otf') format('opentype');
+  src: url('/public/fonts/HelveticaNeueLight.otf') format('opentype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/fonts/HelveticaNeueMedium.otf') format('opentype');
+  src: url('/public/fonts/HelveticaNeueMedium.otf') format('opentype');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'PFFusionSansPro Black';
-  src: url('/fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
+  src: url('/public/fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
   font-display: swap;
 }
 
@@ -63,7 +63,7 @@ button {
 
 .main-page {
   min-height: 100vh;
-  background: url('/images/background.jpg');
+  background: url('/public/images/background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -101,7 +101,6 @@ button {
 
   img {
     width: var(--slide-width);
-    /* min-width: 250px; */
     z-index: 1;
     position: relative;
   }
@@ -166,7 +165,7 @@ button {
   align-items: center;
   width: 100%;
   overflow: hidden;
-  /* gap: 3vw; */
+  min-height: 80px;
 
   .service {
     font-family: 'PFFusionSansPro Black';
@@ -182,16 +181,6 @@ button {
     transition: color .5s ease-in-out, opacity .5s ease-in-out;
     opacity: .5;
   }
-
-  /* .service:nth-child(1),
-  .service:nth-child(7) {
-    opacity: .3;
-  }
-
-  .service:nth-child(2),
-  .service:nth-child(6) {
-    opacity: .6;
-  } */
 
   .service.active {
     color: var(--black);
@@ -287,10 +276,16 @@ button {
     text-align: center;
   }
 
-  .brand-list {
+  .sponsor-list {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
+    min-height: 80px;
+  }
+
+  .sponsor img {
+    width: 80px;
+    height: auto;
   }
 }

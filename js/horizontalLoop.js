@@ -1,127 +1,4 @@
-import { throttle } from './utils.js';
-
-const boxes = gsap.utils.toArray('.service');
-
-let activeElement;
-
-const loop = horizontalLoop(boxes, {
-  duration: 1.5,
-  paused: true,
-  draggable: false,
-  center: true,
-  onChange: (element, index) => {
-    activeElement && activeElement.classList.remove('active');
-    element.classList.add('active');
-    activeElement = element;
-    const length = boxes.length;
-
-    const incrementIndex = (num) =>
-      index - num < 0 ? length + index - num : index - num;
-
-    const decrementIndex = (num) => {
-      if (index + num === length + 1) return index + num - length;
-      return index + num >= length ? length - index - num : index + num;
-    };
-
-    boxes.forEach((box, i) => {
-      i === incrementIndex(1) || i === decrementIndex(1)
-        ? box.classList.add('secondary')
-        : box.classList.remove('secondary');
-
-      i === incrementIndex(2) || i === decrementIndex(2)
-        ? box.classList.add('thirty')
-        : box.classList.remove('thirty');
-    });
-  },
-});
-
-function timeline() {
-  if (loop.isActive()) {
-    return;
-  }
-
-  const arrows = gsap
-    .timeline({ repeat: 1, yoyo: true, ease: 'power1.inOut' })
-    .fromTo(
-      '.arrows',
-      {
-        left: '10px',
-        right: '10px',
-        duration: 0.4,
-      },
-      {
-        left: '-10px',
-        right: '-10px',
-        duration: 0.4,
-      }
-    );
-
-  const text = gsap
-    .timeline({ yoyo: true })
-    .from('.service-info', {
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-      ease: 'power1.inOut',
-    })
-    .from(
-      '.button-wrap',
-      {
-        opacity: 0,
-        y: 10,
-        duration: 0.5,
-        ease: 'power1.inOut',
-      },
-      '<'
-    )
-    .from(
-      '.brand',
-      {
-        stagger: 0.1,
-        opacity: 0,
-        y: 10,
-        delay: 0.2,
-      },
-      '<'
-    )
-    .from(
-      '.info',
-      {
-        opacity: 0,
-        duration: 0.8,
-      },
-      '<'
-    );
-}
-
-boxes.forEach((box, i) =>
-  box.addEventListener(
-    'click',
-    throttle(() => {
-      if (i !== loop.current()) {
-        loop.toIndex(i, { duration: 0.8, ease: 'power1.inOut' });
-        timeline();
-      }
-    })
-  )
-);
-
-document.addEventListener(
-  'keydown',
-  throttle((event) => {
-    if (event.key === 'ArrowRight') {
-      loop.next({ duration: 0.4, ease: 'power1.inOut' });
-      timeline();
-    }
-
-    if (event.key === 'ArrowLeft') {
-      loop.previous({ duration: 0.4, ease: 'power1.inOut' });
-      timeline();
-    }
-  })
-);
-
-function horizontalLoop(items, config) {
+export function horizontalLoop(items, config) {
   items = gsap.utils.toArray(items);
   config = config || {};
   let onChange = config.onChange,
@@ -148,6 +25,7 @@ function horizontalLoop(items, config) {
     spaceBefore = [],
     xPercents = [],
     curIndex = 0,
+    direction = '',
     indexIsDirty = false,
     center = config.center,
     pixelsPerSecond = (config.speed || 1) * 100,
@@ -190,7 +68,7 @@ function horizontalLoop(items, config) {
         ? (tl.duration() * (container.offsetWidth / 2)) / totalWidth
         : 0;
       center &&
-        times.forEach((t, i) => {
+        times.forEach((_t, i) => {
           times[i] = timeWrap(
             tl.labels['label' + i] +
               (tl.duration() * widths[i]) / 2 / totalWidth -
@@ -200,7 +78,7 @@ function horizontalLoop(items, config) {
     },
     getClosest = (values, value, wrap) => {
       let i = values.length,
-        closest = 1e10,
+        closest = 10000000000,
         index = 0,
         d;
       while (i--) {
@@ -272,6 +150,9 @@ function horizontalLoop(items, config) {
     vars = vars || {};
     Math.abs(index - curIndex) > length / 2 &&
       (index += index > curIndex ? -length : length); // always go in the shortest direction
+
+    direction = index < tl.current() ? 'right' : 'left';
+
     let newIndex = gsap.utils.wrap(0, length, index),
       time = times[newIndex];
     if (time > tl.time() !== index > curIndex && index !== curIndex) {
@@ -288,6 +169,7 @@ function horizontalLoop(items, config) {
       ? tl.time(timeWrap(time))
       : tl.tweenTo(time, vars);
   }
+
   tl.toIndex = (index, vars) => toIndex(index, vars);
   tl.closestIndex = (setCurrent) => {
     let index = getClosest(times, tl.time(), tl.duration());
@@ -307,6 +189,7 @@ function horizontalLoop(items, config) {
     tl.reverse();
   }
   tl.closestIndex(true);
+  tl.direction = () => direction;
   lastIndex = curIndex;
   onChange && onChange(items[curIndex], curIndex);
   return tl;
