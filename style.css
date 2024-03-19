@@ -290,14 +290,3 @@ button {
     height: auto;
   }
 }
-
-
-#preloadedImages {
-  visibility: hidden;
-  width: 0px;
-  height: 0px;
-  display: block;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-}
