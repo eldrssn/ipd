@@ -293,24 +293,11 @@ button {
 
 
 #preloadedImages {
+  visibility: hidden;
   width: 0px;
   height: 0px;
-  display: inline;
-  background-image: url('/assets/images/xpel.png'), url('/assets/images/window-tinting.png'), url("/assets/images/sonax.png"), url("/assets/images/rhinomotive.png"),
-    url("/assets/images/paint-protection.png"),
-    url("/assets/images/kpmf.png"),
-    url("/assets/images/koch.png"),
-    url("/assets/images/interior-ceramic.png"),
-    url("/assets/images/hexis.png"),
-    url("/assets/images/gyeon.png"),
-    url("/assets/images/gtechniq.png"),
-    url("/assets/images/custom-decails.png"),
-    url("/assets/images/crystal.png"),
-    url("/assets/images/colored-protection.png"),
-    url("/assets/images/carlas.png"),
-    url("/assets/images/adams.png"),
-    url("/assets/images/3m.png"),
-    url("/assets/images/ceramic.png");
-
-
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
 }
