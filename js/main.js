@@ -8,8 +8,34 @@ import { moveTitle } from './moveTitle.js';
 
 createTitles();
 
+const preloadedImages = document.querySelector('#preloadedImages');
+
+const carImgsHref = content.map((el) => el.carImg);
+const preloadedCarImgs = [];
+
+carImgsHref.forEach((el) => {
+  const img = new Image();
+  img.src = el;
+  img.alt = 'Current Car';
+  preloadedCarImgs.push(img);
+  preloadedImages.append(img);
+});
+
+const sponsorNames = [
+  ...new Set(content.map((el) => el.sponsors).flat()).keys(),
+];
+
+const preloadedSponsorsImgs = sponsorNames.reduce((accum, next) => {
+  const img = document.createElement('img');
+  img.alt = next;
+  img.src = `/assets/images/${next}.png`;
+  preloadedImages.append(img);
+  accum[next] = img;
+  return accum;
+}, {});
+
 const serviceText = document.querySelector('#service-text');
-const currentCar = document.querySelector('#current-car');
+const carWrapper = document.querySelector('.car-wrapper');
 const sponsorList = document.querySelector('.sponsor-list');
 
 const boxes = gsap.utils.toArray('.service');
@@ -50,8 +76,9 @@ const loop = horizontalLoop(boxes, {
 function setService(curIndex) {
   serviceText.textContent = content[curIndex].text;
   setTimeout(() => {
-    currentCar.src = content[curIndex].carImg;
-    setSponsors(sponsorList, content[curIndex].sponsors);
+    carWrapper.innerHTML = '';
+    carWrapper.appendChild(preloadedCarImgs[curIndex]);
+    setSponsors(sponsorList, preloadedSponsorsImgs, content[curIndex].sponsors);
   }, 300);
 }
 

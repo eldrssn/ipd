@@ -1,15 +1,12 @@
-export function setSponsors(node, list) {
+export function setSponsors(node, imgs, list) {
   node.innerHTML = '';
   const fragment = document.createDocumentFragment();
 
   list.forEach((el) => {
     const li = document.createElement('li');
     li.classList.add('sponsor');
-    const img = document.createElement('img');
+    li.appendChild(imgs[el]);
 
-    img.src = `assets/images/${el}.png`;
-
-    li.appendChild(img);
     fragment.appendChild(li);
   });
 
