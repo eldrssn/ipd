@@ -35,7 +35,7 @@ const preloadedSponsorsImgs = sponsorNames.reduce((accum, next) => {
 }, {});
 
 const serviceText = document.querySelector('#service-text');
-const carWrapper = document.querySelector('.car-wrapper');
+const car = document.querySelector('.car');
 const sponsorList = document.querySelector('.sponsor-list');
 
 const boxes = gsap.utils.toArray('.service');
@@ -76,8 +76,8 @@ const loop = horizontalLoop(boxes, {
 function setService(curIndex) {
   serviceText.textContent = content[curIndex].text;
   setTimeout(() => {
-    carWrapper.innerHTML = '';
-    carWrapper.appendChild(preloadedCarImgs[curIndex]);
+    car.innerHTML = '';
+    car.appendChild(preloadedCarImgs[curIndex]);
     setSponsors(sponsorList, preloadedSponsorsImgs, content[curIndex].sponsors);
   }, 300);
 }

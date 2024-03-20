@@ -235,7 +235,6 @@ button {
 
 .car-wrapper {
   position: fixed;
-  width: 100%;
   top: 54%;
   left: 49%;
   transform: translate(-50%, -50%);
@@ -246,7 +245,22 @@ button {
     object-fit: contain;
     height: 44vh;
     width: auto;
+    z-index: 1;
   }
+}
+
+.car-shadow {
+  background: url('assets/images/car-shadow.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0.7;
+  top: 0;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  z-index: 0;
 }
 
 @media screen and (max-height: 800px) {
