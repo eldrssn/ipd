@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/public/fonts/HelveticaNeueLight.otf') format('opentype');
+  src: url('public/fonts/HelveticaNeueLight.otf') format('opentype');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/public/fonts/HelveticaNeueMedium.otf') format('opentype');
+  src: url('public/fonts/HelveticaNeueMedium.otf') format('opentype');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'PFFusionSansPro Black';
-  src: url('/public/fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
+  src: url('public/fonts/PFFusionSansPro-Black-subset.otf') format('opentype');
   font-display: swap;
 }
 
@@ -22,10 +22,10 @@
   --blue: #05a5bf;
   --blue-transparent: #5fc5f8ce;
   --header-bg-main: #09355399;
-  --header-bg-secondary:#5c8a979e;
+  --header-bg-secondary: #5c8a979e;
   --purpule: #cd05ca;
   --black: #000;
-  --white:#fff;
+  --white: #fff;
 
   --slide-width: 25vw;
 
@@ -63,7 +63,7 @@ button {
 
 .main-page {
   min-height: 100vh;
-  background: url('/public/images/background.jpg');
+  background: url('assets/images/background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -100,7 +100,6 @@ button {
   transform: translateX(-50%);
 
   img {
-    min-width: 250px;
     width: var(--slide-width);
     z-index: 1;
     position: relative;
@@ -114,12 +113,26 @@ button {
     transform: translateX(-50%);
     width: 20vw;
     background-color: var(--blue-transparent);
-    filter:blur(20px);
+    filter: blur(20px);
     height: 600px;
     border-radius: 50%;
     -webkit-box-shadow: 0px 5px 132px 88px var(--blue-transparent);
-    -moz-box-shadow: 0px 5px 132px 88px  var(--blue-transparent);
-    box-shadow: 0px 5px 132px 88px  var(--blue-transparent);
+    -moz-box-shadow: 0px 5px 132px 88px var(--blue-transparent);
+    box-shadow: 0px 5px 132px 88px var(--blue-transparent);
+  }
+
+  .arrows {
+    position: absolute;
+    display: flex;
+    top: 60px;
+    left: 10px;
+    right: 10px;
+    justify-content: space-between;
+  }
+
+  .arrow {
+    max-width: 40px;
+    object-fit: contain;
   }
 }
 
@@ -151,59 +164,37 @@ button {
   display: flex;
   position: relative;
   align-items: center;
+  width: 100%;
+  overflow: hidden;
+  min-height: 80px;
 
   .service {
     font-family: 'PFFusionSansPro Black';
     font-size: 20px;
     text-transform: uppercase;
-    width: 360px;
-    padding: 15px 1vh;
+    min-width: 20vw;
+    padding: 15px 8vh;
     display: grid;
     text-align: center;
     place-content: center;
     cursor: pointer;
+    position: relative;
+    transition: color .5s ease-in-out, opacity .5s ease-in-out;
+    opacity: .5;
   }
 
-  .service:nth-child(1),
-  .service:nth-child(7) {
-    opacity: .3;
-  }
-
-  .service:nth-child(2),
-  .service:nth-child(6) {
-    opacity: .6;
-  }
-
-  .choosen .service {
+  .service.active {
     color: var(--black);
     position: relative;
-    margin: 0 30px;
     opacity: 1;
-    min-width: 250px;
-    width: var(--slide-width);
+  }
 
-    &::before {
-      background: url('/public/images/left-arrow.png');
-      left: 15px;
-    }
+  .service.secondary {
+    opacity: 1;
+  }
 
-    &::after {
-      background: url('/public/images/right-arrow.png');
-      right: 15px;
-    }
-
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 10px;
-      width: 40px;
-      height: 80px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
+  .service.thirdy {
+    opacity: .5;
   }
 }
 
@@ -286,10 +277,27 @@ button {
     text-align: center;
   }
 
-  .brand-list {
+  .sponsor-list {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
+    min-height: 80px;
   }
+
+  .sponsor img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+
+#preloadedImages {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
 }

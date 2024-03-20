@@ -3,55 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    ></script>
+    <script type="module" src="js/main.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="assets/images/logo.png" as="image" />
+    <link rel="preload" href="assets/images/background.jpg" as="image" />
+    <link rel="preload" href="assets/images/slide.png" as="image" />
+    <link rel="preload" href="assets/images/right-arrow.png" as="image" />
+    <link rel="preload" href="assets/images/left-arrow.png" as="image" />
     <title>Integral Paint Defence - Protect Service</title>
   </head>
   <body class="main-page">
     <header class="header">
       <nav class="nav">
         <a class="logo" href="/">
-          <img src="/public/images/logo.png" width="136px" height="40px" alt="Logo" />
+          <img
+            src="assets/images/logo.png"
+            width="136px"
+            height="40px"
+            alt="Logo"
+          />
         </a>
         <a href="/who-we-are">Who we are</a>
         <a href="/services">All Services</a>
         <a href="/contacts">Contacts & Location</a>
         <a href="instagram.com">
-          <img src="/public/images/svg/inst.svg" alt="Instagram link" />
+          <img src="assets/images/svg/inst.svg" alt="Instagram link" />
         </a>
       </nav>
     </header>
 
     <main>
       <div class="highlight">
-        <img src="/public/images/slide.png" alt="slide" />
+        <img src="assets/images/slide.png" alt="slide" />
+
+        <div class="arrows">
+          <img
+            class="arrow"
+            src="assets/images/left-arrow.png"
+            width="40px"
+            height="80px"
+            alt="Arrow"
+          />
+          <img
+            class="arrow"
+            src="assets/images/right-arrow.png"
+            width="40px"
+            height="80px"
+            alt="Arrow"
+          />
+        </div>
       </div>
 
       <div class="services">
-        <p class="service">Rim Protection</p>
-        <p class="service">
-          Interior<br />
-          Detailing
-        </p>
-        <p class="service">Colored <br />Paint Protection Film</p>
-        <div class="choosen">
-          <p class="service">
-            Exterior <br />
-            Ceramic Coationg<br />
-            And Polishing
-          </p>
-        </div>
-        <p class="service">Paint Protection Film Matte / Gloss</p>
-        <p class="service">Custom Decals</p>
-        <p class="service">Window Tinting</p>
+        <!-- Внутри блоки формируются из JS -->
       </div>
       <div class="service-info">
-        <p>
-          Polishing removes imperfections and restore shine, while ceramic
-          coating offers lasting protection against damadge, keeping your car
-          pristine.
-          <br />
-          This combo ensures a showroom-quality finish, enhancing both
-          aesthetics and durability.
+        <p id="service-text">
+          Color wrapping gives your vehicle a vibrant new look, with a wide
+          range of colors and finishes to choose from. Whether you prefer a bold
+          statement or a subtle change, color wrapping adds personality and
+          protection to your car, ensuring it stands out on the road.
         </p>
 
         <div class="button-wrap">
@@ -60,56 +75,19 @@
       </div>
 
       <div class="car-wrapper">
-        <img src="/public/images/ceramic-car.png" alt="Car" />
+
+        <!-- Внутри блоки формируются из JS -->
       </div>
 
       <div class="bottom-wrapper">
         <p class="info">
           We are working using only the best brands and ceramic coat brands
         </p>
-        <ul class="brand-list">
-          <li class="brand">
-            <img
-              width="78px"
-              height="40px"
-              src="/public/images/ceracote.png"
-              alt="brand"
-            />
-          </li>
-          <li class="brand">
-            <img
-              width="116px"
-              height="44px"
-              src="/public/images/torgue.png"
-              alt="brand"
-            />
-          </li>
-          <li class="brand">
-            <img
-              src="/public/images/adams.png"
-              width="70px"
-              height="70px"
-              alt="brand"
-            />
-          </li>
-          <li class="brand">
-            <img
-              width="95px"
-              height="65px"
-              src="/public/images/nasiol.png"
-              alt="brand"
-            />
-          </li>
-          <li class="brand">
-            <img
-              width="131px"
-              height="27px"
-              src="/public/images/proje.png"
-              alt="brand"
-            />
-          </li>
+        <ul class="sponsor-list">
+          <!-- Внутри блоки формируются из JS -->
         </ul>
       </div>
+      <div id="preloadedImages"></div>
     </main>
   </body>
 </html>
