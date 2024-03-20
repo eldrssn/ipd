@@ -4,7 +4,7 @@ export function moveCar(loop) {
     .to('.car', {
       opacity: 0,
       x: loop.direction() === 'right' ? '50%' : '-50%',
-      y: loop.direction() === 'right' ? '-90%' : '90%',
+      y: loop.direction() === 'right' ? '-50%' : '50%',
       duration: 0.4,
       ease: 'power1.inOut',
     })
@@ -17,7 +17,7 @@ export function moveCar(loop) {
     )
     .to('.car', {
       x: loop.direction() === 'right' ? '-50%' : '50%',
-      y: loop.direction() === 'right' ? '90%' : '-90%',
+      y: loop.direction() === 'right' ? '50%' : '-50%',
       duration: 0,
     })
     .to('.car', {
