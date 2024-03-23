@@ -1,0 +1,47 @@
+.header {
+  background-color: var(--header-bg-main);
+  border-bottom: 2px solid var(--header-bg-secondary);
+  display: flex;
+  height: 46px;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+
+  .nav {
+    padding: 0 30px;
+    padding-top: 3px;
+    flex-grow: 1;
+    max-width: 1280px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.logo {
+  width: auto;
+  position: relative;
+
+  img {
+    z-index: 1;
+    position: relative;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 20px;
+    top: -3px;
+    left: -5px;
+    height: 46px;
+    width: 70px;
+    background: #7f1c88;
+    background: linear-gradient(90deg, rgba(127, 28, 136, 0.4515056022408963) 2%, rgba(127, 28, 136, 0.8128501400560224) 10%, rgba(127, 28, 136, 0.8660714285714286) 26%, rgba(127, 28, 136, 0.9136904761904762) 44%, rgba(6, 71, 162, 0.8940826330532213) 55%, rgba(14, 77, 128, 0.9360994397759104) 71%, rgba(14, 77, 128, 0.7148109243697479) 91%, rgba(14, 77, 128, 0.34506302521008403) 99%);
+    filter: blur(8px)
+  }
+}

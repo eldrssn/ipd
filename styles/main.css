@@ -1,0 +1,42 @@
+:root {
+  --blue: #05a5bf;
+  --blue-transparent: #5fc5f8ce;
+  --header-bg-main: #09355399;
+  --header-bg-secondary: #5c8a979e;
+  --purpule: #cd05ca;
+  --black: #000;
+  --white: #fff;
+
+  --slide-width: 25vw;
+
+  font-family: 'Helvetica Neue', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #202020;
+  font-size: 14px;
+  color: var(--white);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  height: fit-content;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+}

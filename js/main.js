@@ -1,42 +1,24 @@
 import { throttle } from './utils.js';
-import { content } from './content.js';
+import { content } from './data/content.js';
 import { createTitles } from './createTitles.js';
-import { setSponsors } from './setSponsors.js';
-import { horizontalLoop } from './horizontalLoop.js';
-import { moveCar } from './moveCar.js';
-import { moveTitle } from './moveTitle.js';
+import { setSponsors } from './animation/setSponsors.js';
+import { horizontalLoop } from './utils/horizontalLoop.js';
+import { moveCar } from './animation/moveCar.js';
+import { moveTitle } from './animation/moveTitle.js';
+import { calculateCost } from './calculateCost.js';
+import { preload, preloadedCarImgs } from './preload.js';
+import { showCalculator } from './animation/showCalculator.js';
+import { hideCalculator } from './animation/hideCalculator.js';
+
+preload();
 
 createTitles();
-
-const preloadedImages = document.querySelector('#preloadedImages');
-
-const carImgsHref = content.map((el) => el.carImg);
-const preloadedCarImgs = [];
-
-carImgsHref.forEach((el) => {
-  const img = new Image();
-  img.src = el;
-  img.alt = 'Current Car';
-  preloadedCarImgs.push(img);
-  preloadedImages.append(img);
-});
-
-const sponsorNames = [
-  ...new Set(content.map((el) => el.sponsors).flat()).keys(),
-];
-
-const preloadedSponsorsImgs = sponsorNames.reduce((accum, next) => {
-  const img = document.createElement('img');
-  img.alt = next;
-  img.src = `assets/images/${next}.png`;
-  preloadedImages.append(img);
-  accum[next] = img;
-  return accum;
-}, {});
 
 const serviceText = document.querySelector('#service-text');
 const car = document.querySelector('.car');
 const sponsorList = document.querySelector('.sponsor-list');
+const buttonCost = document.querySelector('.button');
+const calculator = document.querySelector('.calculation-section');
 
 const boxes = gsap.utils.toArray('.service');
 
@@ -78,7 +60,7 @@ function setService(curIndex) {
   setTimeout(() => {
     car.innerHTML = '';
     car.appendChild(preloadedCarImgs[curIndex]);
-    setSponsors(sponsorList, preloadedSponsorsImgs, content[curIndex].sponsors);
+    setSponsors(sponsorList, content[curIndex].sponsors);
   }, 300);
 }
 
@@ -116,3 +98,51 @@ document.addEventListener(
     }
   })
 );
+
+const closeCalculator = (event) => {
+  hideCalculator();
+  gsap.to(calculator, {
+    duration: 0.9,
+    onComplete: () => {
+      calculator.style.overflow = 'hidden';
+      calculator.style.display = 'none';
+      resetServices();
+    },
+  });
+
+  closeButton.removeEventListener('click', closeCalculator);
+};
+
+calculator.addEventListener('click', (event) => {
+  if (event.target === calculator) {
+    closeCalculator();
+  }
+});
+
+const setDefaultService = (id) => {
+  const input = document.querySelector(`input[id="${id}"]`);
+  input.setAttribute('checked', 'true');
+};
+
+const resetServices = () => {
+  const inputs = document.querySelectorAll('input[name="services"]');
+  inputs.forEach((el) => el.removeAttribute('checked'));
+};
+
+buttonCost.addEventListener('click', () => {
+  const closeButton = document.querySelector('.close-button');
+
+  showCalculator();
+
+  gsap.to(calculator, {
+    duration: 0,
+    onComplete: () => {
+      calculator.style.display = 'block';
+      setDefaultService(activeElement.getAttribute('id'));
+    },
+  });
+
+  closeButton.addEventListener('click', closeCalculator);
+});
+
+calculateCost();

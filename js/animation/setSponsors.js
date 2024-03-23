@@ -1,11 +1,13 @@
-export function setSponsors(node, imgs, list) {
+import { preloadedSponsorsImgs } from '../preload';
+
+export function setSponsors(node, list) {
   node.innerHTML = '';
   const fragment = document.createDocumentFragment();
 
   list.forEach((el) => {
     const li = document.createElement('li');
     li.classList.add('sponsor');
-    li.appendChild(imgs[el]);
+    li.appendChild(preloadedSponsorsImgs[el]);
 
     fragment.appendChild(li);
   });
