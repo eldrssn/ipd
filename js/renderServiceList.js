@@ -1,4 +1,4 @@
-import { dependencies } from "./constants";
+import { dependencies } from './constants';
 
 const serviceBox = document.querySelector('.calculator-services');
 
@@ -37,6 +37,7 @@ export const renderServiceList = (services) => {
         const dependentInput = box.querySelector(
           `input[id='${dependentSlug}']`
         );
+
         if (dependentInput) {
           input.hasAttribute('checked')
             ? dependentInput.setAttribute('disabled', 'true')

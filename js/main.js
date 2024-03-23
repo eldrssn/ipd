@@ -1,4 +1,4 @@
-import { throttle } from './utils.js';
+import { throttle } from './utils/throttle.js';
 import { content } from './data/content.js';
 import { createTitles } from './createTitles.js';
 import { setSponsors } from './animation/setSponsors.js';
@@ -19,6 +19,7 @@ const car = document.querySelector('.car');
 const sponsorList = document.querySelector('.sponsor-list');
 const buttonCost = document.querySelector('.button');
 const calculator = document.querySelector('.calculation-section');
+const closeButton = document.querySelector('.close-button');
 
 const boxes = gsap.utils.toArray('.service');
 
@@ -130,15 +131,13 @@ const resetServices = () => {
 };
 
 buttonCost.addEventListener('click', () => {
-  const closeButton = document.querySelector('.close-button');
-
   showCalculator();
 
   gsap.to(calculator, {
     duration: 0,
     onComplete: () => {
       calculator.style.display = 'block';
-      setDefaultService(activeElement.getAttribute('id'));
+      setDefaultService(activeElement.getAttribute('data-id'));
     },
   });
 

@@ -9,7 +9,7 @@ export function createTitles() {
     const p = document.createElement('p');
     p.textContent = title;
     p.classList.add('service');
-    p.setAttribute('id', id);
+    p.setAttribute('data-id', id);
     fragment.appendChild(p);
   });
 
