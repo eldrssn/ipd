@@ -1,4 +1,4 @@
-import { dependencies } from './constants';
+import { dependencies } from './constants.js';
 
 const serviceBox = document.querySelector('.calculator-services');
 

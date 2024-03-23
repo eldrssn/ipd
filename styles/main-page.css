@@ -1,6 +1,6 @@
 .main-page {
   height: 100vh;
-  background: url('assets/images/background.jpg');
+  background: url('/assets/images/background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -141,7 +141,7 @@
 }
 
 .car-shadow {
-  background: url('assets/images/car-shadow.png');
+  background: url('/assets/images/car-shadow.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

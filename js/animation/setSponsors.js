@@ -1,4 +1,4 @@
-import { preloadedSponsorsImgs } from '../preload';
+import { preloadedSponsorsImgs } from '../preload.js';
 
 export function setSponsors(node, list) {
   node.innerHTML = '';

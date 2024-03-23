@@ -1,10 +1,10 @@
-import { servicesData } from './data/services';
-import { renderServiceList } from './renderServiceList';
-import { getMaxTime } from './utils/getMaxTime';
-import { calculateTotalPrice } from './utils/calculateTotalPrice';
-import { vehicleTypes } from './constants';
-import { preloadedVehicleTypeseImgs } from './preload';
-import { moveResult } from './animation/moveResult';
+import { servicesData } from './data/services.js';
+import { renderServiceList } from './renderServiceList.js';
+import { getMaxTime } from './utils/getMaxTime.js';
+import { calculateTotalPrice } from './utils/calculateTotalPrice.js';
+import { vehicleTypes } from './constants.js';
+import { preloadedVehicleTypeseImgs } from './preload.js';
+import { moveResult } from './animation/moveResult.js';
 
 const vehicleTypeImgWrapper = document.querySelector('.type-img');
 const vehicleTypeRadios = document.querySelectorAll(

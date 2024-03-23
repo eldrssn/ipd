@@ -1,5 +1,5 @@
-import { vehicleTypes } from './constants';
-import { content } from './data/content';
+import { vehicleTypes } from './constants.js';
+import { content } from './data/content.js';
 
 const preloadedImages = document.querySelector('#preloadedImages');
 let preloadedVehicleTypeseImgs = {};
