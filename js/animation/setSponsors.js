@@ -1,11 +1,13 @@
-export function setSponsors(node, imgs, list) {
+import { preloadedSponsorsImgs } from '../preload.js';
+
+export function setSponsors(node, list) {
   node.innerHTML = '';
   const fragment = document.createDocumentFragment();
 
   list.forEach((el) => {
     const li = document.createElement('li');
     li.classList.add('sponsor');
-    li.appendChild(imgs[el]);
+    li.appendChild(preloadedSponsorsImgs[el]);
 
     fragment.appendChild(li);
   });
@@ -21,14 +23,6 @@ export function setSponsors(node, imgs, list) {
         opacity: 0,
         y: 10,
         delay: 0.4,
-      },
-      '<'
-    )
-    .from(
-      '.info',
-      {
-        opacity: 0,
-        duration: 0.8,
       },
       '<'
     );
