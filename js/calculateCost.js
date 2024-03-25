@@ -39,8 +39,7 @@ export const calculateCost = () => {
     const maxTime = getMaxTime(choosenServices, serviceList);
 
     const setResults = () => {
-      price.textContent =
-        totalPrice === 0 ? 'Choose services' : '~AED ' + totalPrice;
+      price.textContent = totalPrice === 0 ? 'Choose services' : totalPrice;
       time.textContent = maxTime ? maxTime : 'Choose services';
     };
 

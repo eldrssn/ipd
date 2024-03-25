@@ -1,5 +1,25 @@
 export const content = [
   {
+    id: '6',
+    title: 'exterior ceramic coating and polishing',
+    slug: 'exterior-coating',
+    text: `Polishing removes imperfections and restore shine, while ceramic
+    coating offers lasting protection against damadge, keeping your car
+    pristine.
+    This combo ensures a showroom-quality finish, enhancing both
+    aesthetics and durability.`,
+    carImg: 'assets/images/ceramic.png',
+    sponsors: ['sonax', 'gtechniq'],
+  },
+  {
+    id: '7',
+    title: 'interior ceramic coating and deep cleaning',
+    slug: 'interior-coating',
+    text: 'Interior ceramic coating preserves your car’s interior surfaces, repelling stains and spills while maintaining a fresh, like-new appearance. Combined with deep cleaning, ceramic coating ensures that your car’s interior looks and feels immaculate, enhancing comfort and resale value.',
+    carImg: 'assets/images/interior-ceramic.png',
+    sponsors: ['koch', 'gyeon'],
+  },
+  {
     id: '1',
     title: 'paint protection film',
     text: `Applying Paint Protection Film (PPF) shields your new car from road damage, preserving its appearance for years. Whether glossy or matte, PPF maintains the original paint while adding sleek protection, ensuring your vehicle's showroom allure and value.`,
@@ -38,25 +58,5 @@ export const content = [
     text: 'Ceramic window tinting provides privacy, reduces glare, and blocks harmful UV rays, making your car more comfortable and stylish. With ceramic tinting, you can enjoy a cooler interior while protecting your vehicle and passengers from the sun’s damaging effects.',
     carImg: 'assets/images/window-tinting.png',
     sponsors: ['xpel'],
-  },
-  {
-    id: '6',
-    title: 'exterior ceramic coating and polishing',
-    slug: 'exterior-coating',
-    text: `Polishing removes imperfections and restore shine, while ceramic
-    coating offers lasting protection against damadge, keeping your car
-    pristine.
-    This combo ensures a showroom-quality finish, enhancing both
-    aesthetics and durability.`,
-    carImg: 'assets/images/ceramic.png',
-    sponsors: ['sonax', 'gtechniq'],
-  },
-  {
-    id: '7',
-    title: 'interior ceramic coating and deep cleaning',
-    slug: 'interior-coating',
-    text: 'Interior ceramic coating preserves your car’s interior surfaces, repelling stains and spills while maintaining a fresh, like-new appearance. Combined with deep cleaning, ceramic coating ensures that your car’s interior looks and feels immaculate, enhancing comfort and resale value.',
-    carImg: 'assets/images/interior-ceramic.png',
-    sponsors: ['koch', 'gyeon'],
   },
 ];

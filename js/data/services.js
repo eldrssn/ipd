@@ -3,7 +3,7 @@ export const servicesData = {
     {
       service: 'Transparent Paint Protection Film',
       slug: 'transparent-ppf',
-      price: 1000,
+      price: [1000],
       time: {
         count: [2],
         units: 'days',
@@ -12,7 +12,7 @@ export const servicesData = {
     {
       service: 'Colored Paint Protection Film',
       slug: 'colored-ppf',
-      price: 1500,
+      price: [1500],
       time: {
         count: [2, 3],
         units: 'days',
@@ -31,7 +31,7 @@ export const servicesData = {
     {
       service: 'Exterior Ceramic Coating ',
       slug: 'exterior-coating',
-      price: 2000, //'2000 / 3000'
+      price: [2000, 3000],
       time: {
         count: [2],
         units: 'days',
@@ -51,7 +51,7 @@ export const servicesData = {
     {
       service: 'Customized Colored PPF / Decals',
       slug: 'decals',
-      price: 100, // From
+      price: [100], // From
       time: 'All individually',
     },
     {
@@ -68,7 +68,7 @@ export const servicesData = {
     {
       service: 'Transparent Paint Protection Film',
       slug: 'transparent-ppf',
-      price: 12000, //'12000 / 15000'
+      price: [12000, 15000], //'12000 / 15000'
       time: {
         count: [2, 3],
         units: 'days',
@@ -86,7 +86,7 @@ export const servicesData = {
     {
       service: 'Color Wrapping',
       slug: 'wrapping',
-      price: 11000, // '11000 / 16000'
+      price: [11000, 16000], // '11000 / 16000'
       time: {
         count: [3, 4],
         units: 'days',
@@ -104,7 +104,7 @@ export const servicesData = {
     {
       service: 'Exterior Ceramic Coating ',
       slug: 'exterior-coating',
-      price: 2500, // 2500 / 3500'
+      price: [2500, 3500], // 2500 / 3500'
       time: {
         count: [2],
         units: 'days',
@@ -131,7 +131,7 @@ export const servicesData = {
     {
       service: 'Exterior Detailing',
       slug: 'exterior-detailing',
-      price: 600, // '600 / 1200'
+      price: [600, 1200], // '600 / 1200'
       time: {
         count: [6],
         units: 'hours',
@@ -140,7 +140,7 @@ export const servicesData = {
     {
       service: 'Customized Colored PPF / Decals',
       slug: 'decals',
-      price: 100, //From
+      price: [100], //From
       time: 'All individually',
     },
     {
@@ -157,7 +157,7 @@ export const servicesData = {
     {
       service: 'Transparent Paint Protection Film',
       slug: 'transparent-ppf',
-      price: 14000, //'14000 / 17000'
+      price: [14000, 17000], //'14000 / 17000'
       time: {
         count: [2, 4],
         units: 'days',
@@ -175,7 +175,7 @@ export const servicesData = {
     {
       service: 'Color Wrapping',
       slug: 'wrapping',
-      price: 12000, // '12000 / 17000'
+      price: [12000, 17000], // '12000 / 17000'
       time: {
         count: [3, 5],
         units: 'days',
@@ -193,7 +193,7 @@ export const servicesData = {
     {
       service: 'Exterior Ceramic Coating ',
       slug: 'exterior-coating',
-      price: 2500, //'2500 / 3500'
+      price: [2500, 3500], //'2500 / 3500'
       time: {
         count: [2],
         units: 'days',
@@ -220,7 +220,7 @@ export const servicesData = {
     {
       service: 'Exterior Detailing',
       slug: 'exterior-detailing',
-      price: 600, // '600 / 1200'
+      price: [600, 1200], // '600 / 1200'
       time: {
         count: [6],
         units: 'hours',
@@ -229,7 +229,7 @@ export const servicesData = {
     {
       service: 'Customized Colored PPF / Decals',
       slug: 'decals',
-      price: 100, //From
+      price: [100], //From
       time: 'All individually',
     },
     {
@@ -246,7 +246,7 @@ export const servicesData = {
     {
       service: 'Transparent Paint Protection Film',
       slug: 'transparent-ppf',
-      price: 13000, //'13000 / 16000'
+      price: [13000, 16000], //'13000 / 16000'
       time: {
         count: [2, 3],
         units: 'days',
@@ -265,7 +265,7 @@ export const servicesData = {
       service: 'Color Wrapping',
       slug: 'wrapping',
       slug: 'wrapping',
-      price: 11000, //'11000 / 16000'
+      price: [11000, 16000], //'11000 / 16000'
       time: {
         count: [3, 4],
         units: 'days',
@@ -274,7 +274,7 @@ export const servicesData = {
     {
       service: 'Ceramic Window Tinting',
       slug: 'tinting',
-      price: 2500, // '2500 / 3000'
+      price: [2500, 3000], // '2500 / 3000'
       time: {
         count: [4],
         units: 'hours',
@@ -283,7 +283,7 @@ export const servicesData = {
     {
       service: 'Exterior Ceramic Coating ',
       slug: 'exterior-coating',
-      price: 3000, // '3000 / 4000'
+      price: [3000, 4000], // '3000 / 4000'
       time: {
         count: [2],
         units: 'days',
@@ -310,7 +310,7 @@ export const servicesData = {
     {
       service: 'Exterior Detailing',
       slug: 'exterior-detailing',
-      price: 800, // '800 / 1500'
+      price: [800, 1500], // '800 / 1500'
       time: {
         count: [7],
         units: 'hours',
@@ -319,7 +319,7 @@ export const servicesData = {
     {
       service: 'Customized Colored PPF / Decals',
       slug: 'decals',
-      price: 100, // FROM
+      price: [100], // FROM
       time: 'All individually',
     },
     {

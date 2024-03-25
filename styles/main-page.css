@@ -175,12 +175,6 @@
   align-items: center;
   gap: 3vh;
 
-  .info {
-    width: 200px;
-    font-size: 12px;
-    opacity: .6;
-    text-align: center;
-  }
 
   .sponsor-list {
     display: flex;

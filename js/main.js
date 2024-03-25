@@ -100,6 +100,11 @@ document.addEventListener(
   })
 );
 
+const resetServices = () => {
+  const inputs = document.querySelectorAll('input[name="services"]');
+  inputs.forEach((el) => el.removeAttribute('checked'));
+};
+
 const closeCalculator = (event) => {
   hideCalculator();
   gsap.to(calculator, {
@@ -107,10 +112,10 @@ const closeCalculator = (event) => {
     onComplete: () => {
       calculator.style.overflow = 'hidden';
       calculator.style.display = 'none';
-      resetServices();
     },
   });
 
+  resetServices();
   closeButton.removeEventListener('click', closeCalculator);
 };
 
@@ -123,11 +128,6 @@ calculator.addEventListener('click', (event) => {
 const setDefaultService = (id) => {
   const input = document.querySelector(`input[id="${id}"]`);
   input.setAttribute('checked', 'true');
-};
-
-const resetServices = () => {
-  const inputs = document.querySelectorAll('input[name="services"]');
-  inputs.forEach((el) => el.removeAttribute('checked'));
 };
 
 buttonCost.addEventListener('click', () => {

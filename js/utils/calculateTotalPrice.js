@@ -1,16 +1,20 @@
 export function calculateTotalPrice(choosenServices, serviceList) {
   let totalPrice = 0;
+  let isFrom = false;
 
   choosenServices.forEach((chosenService) => {
     const service = serviceList.find((item) => item.slug === chosenService);
     if (service) {
-      const price =
-        typeof service.price === 'string'
-          ? service.price.split(' / ')[1]
-          : service.price;
+      const price = Array.isArray(service.price)
+        ? service.price[0]
+        : service.price;
+
+      if (Array.isArray(service.price)) {
+        isFrom = true;
+      }
       totalPrice += parseInt(price, 10);
     }
   });
 
-  return totalPrice;
+  return isFrom ? `From AED ${totalPrice}` : `AED ${totalPrice}`;
 }

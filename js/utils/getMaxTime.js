@@ -4,7 +4,13 @@ export function getMaxTime(choosenServices, serviceList) {
   for (const service of serviceList) {
     if (choosenServices.includes(service.slug)) {
       const time = service.time;
-      if (typeof time === 'string') return time;
+      if (typeof time === 'string') {
+        if (choosenServices.length === 1) {
+          return time;
+        } else {
+          continue;
+        }
+      }
 
       if (!maxTime.units) {
         maxTime = time;

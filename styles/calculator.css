@@ -2,7 +2,7 @@
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: url('assets/images/logo-bg.jpg');
+  background: url('/assets/images/logo-bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -91,7 +91,7 @@
   border-radius: 12px;
   background-color: var(--black);
   height: 100%;
-  background-image: url('assets/images/bg-calculator.jpg');
+  background-image: url('/assets/images/bg-calculator.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -193,11 +193,11 @@
 }
 
 .calculator-action-border.book .calculator-action::after {
-  background-image: url('assets/images/svg/calandar.svg');
+  background-image: url('/assets/images/svg/calandar.svg');
 }
 
 .calculator-action-border.whatsapp .calculator-action::after {
-  background-image: url('assets/images/svg/phone.svg');
+  background-image: url('/assets/images/svg/phone.svg');
 }
 
 .calculator-action-border.whatsapp {

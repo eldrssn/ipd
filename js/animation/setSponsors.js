@@ -25,13 +25,5 @@ export function setSponsors(node, list) {
         delay: 0.4,
       },
       '<'
-    )
-    .from(
-      '.info',
-      {
-        opacity: 0,
-        duration: 0.8,
-      },
-      '<'
     );
 }
