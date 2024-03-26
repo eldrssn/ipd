@@ -35,5 +35,9 @@ export function getMaxTime(choosenServices, serviceList) {
     }
   }
 
+  if (maxTime.count.length === 0) {
+    return 0;
+  }
+
   return '~ ' + maxTime.count.join('-') + ' ' + maxTime.units;
 }

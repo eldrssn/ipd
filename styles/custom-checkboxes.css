@@ -28,8 +28,8 @@
   color: var(--white);
 }
 
-.checkbox-wrapper:has( input:disabled) {
-  opacity: 0.7;
+.checkbox-wrapper:has(input:disabled) {
+  opacity: 0.25;
 }
 
 .checkbox-wrapper .checkmark:after {

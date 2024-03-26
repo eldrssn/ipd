@@ -16,5 +16,9 @@ export function calculateTotalPrice(choosenServices, serviceList) {
     }
   });
 
+  if (totalPrice === 0) {
+    return 0;
+  }
+
   return isFrom ? `From AED ${totalPrice}` : `AED ${totalPrice}`;
 }

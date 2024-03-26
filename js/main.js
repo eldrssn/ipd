@@ -9,6 +9,8 @@ import { calculateCost } from './calculateCost.js';
 import { preload, preloadedCarImgs } from './preload.js';
 import { showCalculator } from './animation/showCalculator.js';
 import { hideCalculator } from './animation/hideCalculator.js';
+import { dependencies } from './constants.js';
+import { setDependencies } from './utils/setDependencies.js';
 
 preload();
 
@@ -128,6 +130,10 @@ calculator.addEventListener('click', (event) => {
 const setDefaultService = (id) => {
   const input = document.querySelector(`input[id="${id}"]`);
   input.setAttribute('checked', 'true');
+
+  const box = calculator.querySelector('.calculator-services');
+  const dependenciesList = dependencies[input.getAttribute('id')];
+  dependenciesList && setDependencies(input, box, dependenciesList);
 };
 
 buttonCost.addEventListener('click', () => {
