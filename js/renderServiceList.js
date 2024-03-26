@@ -1,4 +1,5 @@
 import { dependencies } from './constants.js';
+import { setDependencies } from './utils/setDependencies.js';
 
 const serviceBox = document.querySelector('.calculator-services');
 
@@ -32,25 +33,11 @@ export const renderServiceList = (services) => {
 
     const dependenciesList = dependencies[el.slug];
 
-    function setDependencies(input, box) {
-      dependenciesList.forEach((dependentSlug) => {
-        const dependentInput = box.querySelector(
-          `input[id='${dependentSlug}']`
-        );
-
-        if (dependentInput) {
-          input.hasAttribute('checked')
-            ? dependentInput.setAttribute('disabled', 'true')
-            : dependentInput.removeAttribute('disabled');
-        }
-      });
-    }
-
     input.addEventListener('click', () => {
       input.hasAttribute('checked')
         ? input.removeAttribute('checked')
         : input.setAttribute('checked', 'true');
-      dependenciesList && setDependencies(input, serviceBox);
+      dependenciesList && setDependencies(input, serviceBox, dependenciesList);
     });
   });
 

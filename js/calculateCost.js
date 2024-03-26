@@ -33,8 +33,6 @@ export const calculateCost = () => {
     const formData = new FormData(this);
     const choosenServices = formData.getAll('services');
 
-    if (choosenServices.length === 0) return;
-
     const totalPrice = calculateTotalPrice(choosenServices, serviceList);
     const maxTime = getMaxTime(choosenServices, serviceList);
 
