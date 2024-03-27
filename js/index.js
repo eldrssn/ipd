@@ -12,142 +12,144 @@ import { hideCalculator } from './animation/hideCalculator.js';
 import { dependencies } from './constants.js';
 import { setDependencies } from './utils/setDependencies.js';
 
-preload();
+window.addEventListener('load', () => {
+  preload();
 
-createTitles();
+  createTitles();
 
-const serviceText = document.querySelector('#service-text');
-const car = document.querySelector('.car');
-const sponsorList = document.querySelector('.sponsor-list');
-const buttonCost = document.querySelector('.button');
-const calculator = document.querySelector('.calculation-section');
-const closeButton = document.querySelector('.close-button');
+  const serviceText = document.querySelector('#service-text');
+  const car = document.querySelector('.car');
+  const sponsorList = document.querySelector('.sponsor-list');
+  const buttonCost = document.querySelector('.button');
+  const calculator = document.querySelector('.calculation-section');
+  const closeButton = document.querySelector('.close-button');
 
-const boxes = gsap.utils.toArray('.service');
+  const boxes = gsap.utils.toArray('.service');
 
-let activeElement;
+  let activeElement;
 
-const loop = horizontalLoop(boxes, {
-  duration: 1.5,
-  paused: true,
-  draggable: false,
-  center: true,
-  onChange: (element, index) => {
-    activeElement && activeElement.classList.remove('active');
-    element.classList.add('active');
-    activeElement = element;
-    const length = boxes.length;
+  const loop = horizontalLoop(boxes, {
+    duration: 1.5,
+    paused: true,
+    draggable: false,
+    center: true,
+    onChange: (element, index) => {
+      activeElement && activeElement.classList.remove('active');
+      element.classList.add('active');
+      activeElement = element;
+      const length = boxes.length;
 
-    const incrementIndex = (num) =>
-      index - num < 0 ? length + index - num : index - num;
+      const incrementIndex = (num) =>
+        index - num < 0 ? length + index - num : index - num;
 
-    const decrementIndex = (num) => {
-      if (index + num === length + 1) return index + num - length;
-      return index + num >= length ? length - index - num : index + num;
-    };
+      const decrementIndex = (num) => {
+        if (index + num === length + 1) return index + num - length;
+        return index + num >= length ? length - index - num : index + num;
+      };
 
-    boxes.forEach((box, i) => {
-      i === incrementIndex(1) || i === decrementIndex(1)
-        ? box.classList.add('secondary')
-        : box.classList.remove('secondary');
+      boxes.forEach((box, i) => {
+        i === incrementIndex(1) || i === decrementIndex(1)
+          ? box.classList.add('secondary')
+          : box.classList.remove('secondary');
 
-      i === incrementIndex(2) || i === decrementIndex(2)
-        ? box.classList.add('thirty')
-        : box.classList.remove('thirty');
-    });
-  },
-});
+        i === incrementIndex(2) || i === decrementIndex(2)
+          ? box.classList.add('thirty')
+          : box.classList.remove('thirty');
+      });
+    },
+  });
 
-function setService(curIndex) {
-  serviceText.textContent = content[curIndex].text;
-  setTimeout(() => {
-    car.innerHTML = '';
-    car.appendChild(preloadedCarImgs[curIndex]);
-    setSponsors(sponsorList, content[curIndex].sponsors);
-  }, 300);
-}
+  function setService(curIndex) {
+    serviceText.textContent = content[curIndex].text;
+    setTimeout(() => {
+      car.innerHTML = '';
+      car.appendChild(preloadedCarImgs[curIndex]);
+      setSponsors(sponsorList, content[curIndex].sponsors);
+    }, 300);
+  }
 
-setService(loop.current());
+  setService(loop.current());
 
-boxes.forEach((box, i) =>
-  box.addEventListener(
-    'click',
-    throttle(() => {
-      if (i !== loop.current()) {
-        loop.toIndex(i, { duration: 0.8, ease: 'power1.inOut' });
-        moveCar(loop);
+  boxes.forEach((box, i) =>
+    box.addEventListener(
+      'click',
+      throttle(() => {
+        if (i !== loop.current()) {
+          loop.toIndex(i, { duration: 0.8, ease: 'power1.inOut' });
+          moveCar(loop);
+          setService(loop.current());
+          moveTitle(loop);
+        }
+      })
+    )
+  );
+
+  document.addEventListener(
+    'keydown',
+    throttle((event) => {
+      if (event.key === 'ArrowRight') {
+        loop.next({ duration: 0.4, ease: 'power1.inOut' });
         setService(loop.current());
+        moveCar(loop);
+        moveTitle(loop);
+      }
+
+      if (event.key === 'ArrowLeft') {
+        loop.previous({ duration: 0.4, ease: 'power1.inOut' });
+        setService(loop.current());
+        moveCar(loop);
         moveTitle(loop);
       }
     })
-  )
-);
+  );
 
-document.addEventListener(
-  'keydown',
-  throttle((event) => {
-    if (event.key === 'ArrowRight') {
-      loop.next({ duration: 0.4, ease: 'power1.inOut' });
-      setService(loop.current());
-      moveCar(loop);
-      moveTitle(loop);
+  const resetServices = () => {
+    const inputs = document.querySelectorAll('input[name="services"]');
+    inputs.forEach((el) => el.removeAttribute('checked'));
+  };
+
+  const closeCalculator = (event) => {
+    hideCalculator();
+    gsap.to(calculator, {
+      duration: 0.9,
+      onComplete: () => {
+        calculator.style.overflow = 'hidden';
+        calculator.style.display = 'none';
+      },
+    });
+
+    resetServices();
+    closeButton.removeEventListener('click', closeCalculator);
+  };
+
+  calculator.addEventListener('click', (event) => {
+    if (event.target === calculator) {
+      closeCalculator();
     }
-
-    if (event.key === 'ArrowLeft') {
-      loop.previous({ duration: 0.4, ease: 'power1.inOut' });
-      setService(loop.current());
-      moveCar(loop);
-      moveTitle(loop);
-    }
-  })
-);
-
-const resetServices = () => {
-  const inputs = document.querySelectorAll('input[name="services"]');
-  inputs.forEach((el) => el.removeAttribute('checked'));
-};
-
-const closeCalculator = (event) => {
-  hideCalculator();
-  gsap.to(calculator, {
-    duration: 0.9,
-    onComplete: () => {
-      calculator.style.overflow = 'hidden';
-      calculator.style.display = 'none';
-    },
   });
 
-  resetServices();
-  closeButton.removeEventListener('click', closeCalculator);
-};
+  const setDefaultService = (id) => {
+    const input = document.querySelector(`input[id="${id}"]`);
+    input.setAttribute('checked', 'true');
 
-calculator.addEventListener('click', (event) => {
-  if (event.target === calculator) {
-    closeCalculator();
-  }
-});
+    const box = calculator.querySelector('.calculator-services');
+    const dependenciesList = dependencies[input.getAttribute('id')];
+    dependenciesList && setDependencies(input, box, dependenciesList);
+  };
 
-const setDefaultService = (id) => {
-  const input = document.querySelector(`input[id="${id}"]`);
-  input.setAttribute('checked', 'true');
+  buttonCost.addEventListener('click', () => {
+    showCalculator();
 
-  const box = calculator.querySelector('.calculator-services');
-  const dependenciesList = dependencies[input.getAttribute('id')];
-  dependenciesList && setDependencies(input, box, dependenciesList);
-};
+    gsap.to(calculator, {
+      duration: 0,
+      onComplete: () => {
+        calculator.style.display = 'block';
+        setDefaultService(activeElement.getAttribute('data-id'));
+      },
+    });
 
-buttonCost.addEventListener('click', () => {
-  showCalculator();
-
-  gsap.to(calculator, {
-    duration: 0,
-    onComplete: () => {
-      calculator.style.display = 'block';
-      setDefaultService(activeElement.getAttribute('data-id'));
-    },
+    closeButton.addEventListener('click', closeCalculator);
   });
 
-  closeButton.addEventListener('click', closeCalculator);
+  calculateCost();
 });
-
-calculateCost();

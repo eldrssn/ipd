@@ -57,7 +57,7 @@
   border-radius: 12px;
   flex-grow: 1;
   width: 100%;
-  background-color: var(--black);
+  background-color: var(--bg-block);
   height: 100%;
   background-image: url('/assets/images/bg-block.jpg');
   background-position: center;

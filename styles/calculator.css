@@ -89,7 +89,7 @@
 
 .calculator-inputs {
   border-radius: 12px;
-  background-color: var(--black);
+  background-color: var(--bg-block);
   height: 100%;
   background-image: url('/assets/images/bg-block.jpg');
   background-position: center;
