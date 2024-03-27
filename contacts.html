@@ -3,17 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles/contacts.css" />
-    <!-- <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
-    ></script> -->
-    <!-- <script type="module" src="js/contacts.js" defer></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" href="assets/images/logo.png" as="image" />
-    <link rel="preload" href="assets/images/background.jpg" as="image" />
-    <!-- <link rel="preload" href="assets/images/slide.png" as="image" />
-    <link rel="preload" href="assets/images/right-arrow.png" as="image" />
-    <link rel="preload" href="assets/images/left-arrow.png" as="image" /> -->
+    <link rel="preload" href="assets/images/bg-pages.jpg" as="image" />
+    <link rel="preload" href="assets/images/bg-block.jpg" as="image" />
     <link
       rel="preload"
       href="assets/fonts/HelveticaNeueLight.otf"
@@ -30,14 +23,11 @@
     />
     <link
       rel="preload"
-      href="assets/fonts/Core_Sans_D_25_Light_W01_Rg.woff2"
+      href="assets/fonts/PFFusionSansPro-Black-subset.otf"
       as="font"
-      type="font/woff2"
+      type="font/otf"
       crossorigin
     />
-    <!-- <link rel="preload" href="assets/images/logo-bg.jpg" as="image" />
-    <link rel="preload" href="assets/images/bg-calculator.jpg" as="image" />
-    <link rel="preload" href="assets/images/bg-header.png" as="image" /> -->
     <title>
       Contacts & Location | Integral Paint Defence - Protect Service
     </title>
@@ -61,6 +51,47 @@
         </a>
       </nav>
     </header>
-    Contacts
+
+    <main class="main">
+      <div class="content-wrapper-border">
+        <div class="content-wrapper">
+          <div class="content-header-border">
+            <h1 class="content-header">Contacts and Location</h1>
+          </div>
+
+          <div class="content-body">
+            <div class="logo-full">
+              <img src="/assets/images/logo-full.png" alt="Logo" />
+            </div>
+
+            <div class="adress-wrapper">
+              <h2>Integral Paint Defence</h2>
+              <ul>
+                <li>
+                  <strong>Address:</strong>
+                  123 Sheikh Zayed Rd, Dubai, United Arab Emirates
+                </li>
+                <li>
+                  <strong>Phone:</strong>
+                  <a href="tel:+971501234567">+971 50 123 4567</a>
+                </li>
+              </ul>
+              <div class="calculator-actions">
+                <div class="calculator-action-border book">
+                  <button class="calculator-action" type="button">
+                    <strong>Book</strong> Your Service
+                  </button>
+                </div>
+                <div class="calculator-action-border whatsapp">
+                  <button class="calculator-action" type="button">
+                    <strong>Or</strong> WhatsApp Us
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

@@ -17,6 +17,7 @@
 
 .main {
   overflow: auto;
+  padding: 0 10px;
 }
 
 .main::before {
@@ -29,20 +30,19 @@
   background: radial-gradient(circle, #77b3ce 0%, var(--blue) 50%, var(--purpule) 75%);
   filter: blur(90px);
   height: 80vh;
-  width: 50vw;
+  width: 60vw;
   border-radius: 50%;
   z-index: 0;
 }
 
 .content-header-border,
-.content-wrapper-border,
-.review-border {
+.content-wrapper-border {
   padding: 1px;
   background: linear-gradient(to right, var(--purpule), var(--blue));
 }
 
 .content-wrapper-border {
-  width: 700px;
+  max-width: 850px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@
   width: 100%;
   background-color: var(--black);
   height: 100%;
-  background-image: url('/assets/images/bg-calculator.jpg');
+  background-image: url('/assets/images/bg-block.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -72,7 +72,6 @@
   border-radius: 10px;
   height: 40px;
   margin: 2px;
-  margin-bottom: 20px;
 }
 
 .content-header {
@@ -91,61 +90,75 @@
   justify-content: center;
   align-items: center;
   gap: 6px;
-
-
   font-family: 'PFFusionSansPro Black';
 }
 
-.content-text {
-  padding: 0 20px;
-  line-height: 150%;
-  margin-bottom: 10px;
+.service-list-border {
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(to right, var(--purpule), var(--blue));
+  height: fit-content;
 }
 
-.reviews {
-  padding: 20px;
+.content-body {
+  min-height: 300px;
+  margin: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.service-list {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 272px;
+
+  background: rgb(33, 53, 64);
+  background: linear-gradient(90deg, rgba(33, 53, 64, 1) 0%, rgba(34, 39, 43, 1) 24%, rgba(35, 35, 40, 1) 47%, rgba(53, 38, 53, 1) 71%, rgba(61, 12, 85, 1) 100%);
+  color: #9f99a0;
+}
+
+.service-item {
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.service-item:hover {
+  backdrop-filter: brightness(110%);
+}
+
+.service-item.active {
+  color: white;
+}
+
+.service-body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
+  margin-top: 12px;
 
-.review-border {
-  border-radius: 12px;
-}
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-.review {
-  padding: 10px;
-  border-radius: 12px;
-  background: rgb(33, 53, 64);
-  background: linear-gradient(90deg, rgba(33, 53, 64, 1) 0%, rgba(34, 39, 43, 1) 24%, rgba(35, 35, 40, 1) 47%, rgba(53, 38, 53, 1) 71%, rgba(61, 12, 85, 1) 100%);
+  p,
+  ol {
+    line-height: 150%;
+    font-size: 14px;
+  }
 
-}
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 
-.review-heading {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.review-name {
-  font-weight: 700;
-}
-
-.button {
-  margin: auto;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: grid;
-  place-content: center;
-
-  background: rgb(106, 190, 253);
-  background: linear-gradient(180deg, rgba(100, 195, 255, 1) 0%, rgba(198, 238, 254, 1) 14%, rgba(198, 238, 254, 1) 20%, rgb(84, 188, 253) 38%, rgb(75, 183, 250) 60%, rgba(198, 238, 254, 1) 75%, rgba(200, 191, 230, 1) 80%, rgba(205, 58, 179, 1) 100%);
-
-  height: 40px;
-  min-width: 240px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  letter-spacing: 1px;
-  color: var(--black)
+    li:before {
+      content: '⚬'
+    }
+  }
 }
