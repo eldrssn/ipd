@@ -29,7 +29,7 @@
   background: rgb(64, 113, 145);
   background: radial-gradient(circle, #77b3ce 0%, var(--blue) 50%, var(--purpule) 75%);
   filter: blur(90px);
-  height: 70vh;
+  height: 90vh;
   width: 60vw;
   border-radius: 50%;
   z-index: 0;
@@ -38,7 +38,7 @@
 .content-header-border,
 .content-wrapper-border,
 .service-body-wrapper,
-.calculator-action-border {
+.calculator-action-border, .map  {
   padding: 1px;
   background: linear-gradient(to right, var(--purpule), var(--blue));
 }
@@ -151,6 +151,7 @@
   border-radius: 12px;
   width: 100%;
   height: 100%;
+  display: block;
   position: relative;
   text-align: left;
   padding: 10px;
@@ -189,4 +190,17 @@
     -moz-box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
     box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
   }
+}
+
+.map {
+  border-radius: 10px;
+  padding: 2px;
+  margin: 2px;
+}
+
+.map iframe {
+  background-color: var(--bg-block);
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: -4px;
 }
