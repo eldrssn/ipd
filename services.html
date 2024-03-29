@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/services.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    ></script>
+    <script type="module" src="js/services-page.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="assets/images/logo.png" as="image" />
+    <link rel="preload" href="assets/images/bg-pages.jpg" as="image" />
+    <link rel="preload" href="assets/images/bg-block.jpg" as="image" />
+    <link
+      rel="preload"
+      href="assets/fonts/HelveticaNeueLight.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/HelveticaNeueMedium.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/PFFusionSansPro-Black-subset.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <title>All Services | Integral Paint Defence - Protect Service</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <nav class="nav">
+        <a class="logo" href="/">
+          <img
+            src="assets/images/logo.png"
+            width="80px"
+            height="40px"
+            alt="Logo"
+          />
+        </a>
+        <a href="/who-we-are.html">Who we are</a>
+        <a href="/services.html">All Services</a>
+        <a href="/contacts.html">Contacts & Location</a>
+        <a href="https://www.instagram.com/ipd.ae" target="_blank">
+          <img src="assets/images/svg/inst.svg" alt="Instagram link" />
+        </a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="content-wrapper-border">
+        <div class="content-wrapper">
+          <div class="content-header-border">
+            <h1 class="content-header">All Services</h1>
+          </div>
+
+          <div class="content-body">
+            <div class="service-list-border">
+              <ul class="service-list">
+                <li class="service-item" data-id="transparent-ppf">
+                  Paint Protection Film
+                </li>
+                <li class="service-item" data-id="colored-ppf">
+                  Colored Paint Protection Film
+                </li>
+                <li class="service-item" data-id="wrapping">Color Wrapping</li>
+                <li class="service-item" data-id="exterior-coating">
+                  Exterior Ceramic Coating
+                </li>
+                <li class="service-item" data-id="interior-coating">
+                  Interior Ceramic Coating
+                </li>
+                <li class="service-item" data-id="tinting">
+                  Ceramic Window Tinting
+                </li>
+                <li class="service-item" data-id="cleaning">
+                  Interior Cleaning
+                </li>
+                <li class="service-item" data-id="polishing">
+                  Exterior Polishing
+                </li>
+                <li class="service-item" data-id="rim">Rim Protection</li>
+              </ul>
+            </div>
+            <div class="service-body-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <template id="transparent-ppf">
+      <div class="service-body">
+        <h2>Paint Protection Film</h2>
+        <p>
+          Our main course. The best solution on the market for protecting your
+          car's paintwork today. Preserves the condition of a new car for many
+          years and frees you from worries about it. Protects against
+          mechanical, chemical, and UV impacts on protected surfaces. We combine
+          pre-cut/manual wrapping approaches to ensure the most effective
+          coverage of the car. We strictly agree with the client on the scope of
+          preparatory work on the car. The pre-cut method allows for complete
+          coverage of the car without disassembling parts. (Relevant for new
+          cars)
+        </p>
+      </div>
+    </template>
+
+    <template id="colored-ppf">
+      <div class="service-body">
+        <h2>Colored Paint Protection Film</h2>
+        <p>
+          Was there no car model in the desired color at the dealer? No problem!
+          All the properties of the protective film, now in color. (Relevant for
+          new cars and used cars in good condition)
+        </p>
+      </div>
+    </template>
+
+    <template id="wrapping">
+      <div class="service-body">
+        <h2>Color Wrapping</h2>
+        <p>
+          A convenient solution for changing the color of your car with the
+          ability to quickly return to the original color. Does not provide
+          protective functions, requires extensive disassembly of car parts.
+          (Relevant for used cars, regardless of condition)
+        </p>
+      </div>
+    </template>
+
+    <template id="exterior-coating">
+      <div class="service-body">
+        <h2>Exterior Ceramic Coating</h2>
+        <p>
+          To maintain the shine and feel of a new car for a long period of time,
+          ceramic coating is a great choice. Ceramic compositions are liquid.
+          After application and crystallization, they provide protection against
+          UV rays and a powerful hydrophobic effect. Unfortunately, ceramic
+          coating does not protect against mechanical damage. All types of
+          surfaces can be treated, including paint, glass, and plastic.
+          (Relevant for all cars)
+        </p>
+      </div>
+    </template>
+
+    <template id="interior-coating">
+      <div class="service-body">
+        <h2>Interior Ceramic Coating</h2>
+        <p>
+          The only solution for protecting the interior of the car is Gyeon
+          LeatherShield. The ceramic coating blocks UV rays, thereby providing
+          protection against fading and color loss during operation. It also
+          provides a hydrophobic effect, making it much easier to clean the
+          interior in the future. (Relevant for new cars)
+        </p>
+      </div>
+    </template>
+
+    <template id="tinting">
+      <div class="service-body">
+        <h2>Ceramic Window Tinting</h2>
+        <p>
+          We all know how hot it can get inside a car in the summer, even when
+          the air conditioning is not enough to cool the cabin. But we have a
+          solution for that too. Xpel Prime XR+ tinting, with its ceramic
+          coating, provides 98% blocking of thermal radiation (Infrared
+          Rejection IRR). Also, let's not forget about the UV index, which is
+          quite high and even dangerous for the skin. The tinting blocks the
+          entire ultraviolet spectrum of rays, 100% UV rejection. The above
+          properties are present in the entire range of tinting shades.
+          (Relevant for all cars)
+        </p>
+      </div>
+    </template>
+
+    <template id="cleaning">
+      <div class="service-body">
+        <h2>Interior Cleaning</h2>
+        <p>
+          During operation, creams and grease from our bodies gradually settle
+          on the seats, steering wheel, and door panels. All this mixes with
+          dust and layers are retained on the surfaces. You may have noticed
+          that leather seats become shiny over time, change color, and lose
+          softness and elasticity. Any car needs a thorough cleaning during
+          operation. Koch Chemie MZR gently and effectively helps remove
+          contaminants from all types of interior surfaces of your car. Only an
+          individual approach to each, even the smallest detail, can ensure a
+          perfect result in cleaning. (Relevant for all types of cars)
+        </p>
+      </div>
+    </template>
+
+    <template id="polishing">
+      <div class="service-body">
+        <h2>Exterior Polishing</h2>
+        <p>
+          You probably remember how your car shone in the first days after
+          purchase, how rich its color was? Unfortunately, over time, that shine
+          has disappeared. In its place came small and large scratches, that
+          unpleasant web of scratches around the reflection of the sun. The
+          color has faded, and no matter how much you wash the car, it seems it
+          can't be returned. But there is a solution. Car body polishing allows
+          you to get rid of scratches, thereby restoring the shine and rich
+          color of the car.
+        </p>
+        <p>We offer 2 types of polishing:</p>
+        <ol>
+          <li>
+            Light polishing. Allows you to quickly refresh the car, removing up
+            to 60% of scratches.
+          </li>
+          <li>
+            Deep polishing. Allows you to bring the car as close as possible to
+            the condition of a new one, removing up to 95% of scratches. It is
+            recommended to use together with Exterior Ceramic Coating.
+          </li>
+        </ol>
+      </div>
+    </template>
+
+    <template id="rim">
+      <div class="service-body">
+        <h2>Rim Protection. Alloygators</h2>
+        <p>
+          That feeling when you hit a stone curb with your wheel in a parking
+          lot, it's physically painful, I believe. You want to turn back time
+          and not make that mistake. Alloygators give you a second chance. It is
+          a plastic insert between the wheel and the tire, it is dense enough
+          and has sufficient thickness to provide protection to the wheel from
+          such damage.
+        </p>
+      </div>
+    </template>
+  </body>
+</html>

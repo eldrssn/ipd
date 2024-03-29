@@ -1,0 +1,206 @@
+@import './fonts.css';
+@import './main.css';
+@import './header.css';
+
+.body {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  background: url('/assets/images/bg-pages.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 46px;
+  background-attachment: fixed;
+}
+
+.main {
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(64, 113, 145);
+  background: radial-gradient(circle, #77b3ce 0%, var(--blue) 50%, var(--purpule) 75%);
+  filter: blur(90px);
+  height: 90vh;
+  width: 60vw;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.content-header-border,
+.content-wrapper-border,
+.service-body-wrapper,
+.calculator-action-border, .map  {
+  padding: 1px;
+  background: linear-gradient(to right, var(--purpule), var(--blue));
+}
+
+.content-wrapper-border {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  margin-top: 30px;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.content-wrapper {
+  border-radius: 12px;
+  flex-grow: 1;
+  width: 100%;
+  background-color: var(--bg-block);
+  height: 100%;
+  background-image: url('/assets/images/bg-block.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header-border {
+  border-radius: 10px;
+  height: 40px;
+  margin: 2px;
+}
+
+.content-header {
+  color: var(--black);
+  border-radius: 10px;
+  font-weight: 400;
+  font-family: 'Core Sans';
+  height: 100%;
+  text-transform: uppercase;
+  background: rgb(106, 190, 253);
+  background: url('/assets/images/bg-header.png'), linear-gradient(180deg, rgba(100, 195, 255, 1) 0%, rgba(198, 238, 254, 1) 14%, rgba(198, 238, 254, 1) 24%, rgba(100, 195, 255, 1) 38%, rgba(100, 195, 255, 1) 53%, rgba(198, 238, 254, 1) 68%, rgba(200, 191, 230, 1) 84%, rgba(205, 58, 179, 1) 100%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-family: 'PFFusionSansPro Black';
+}
+
+.logo-full img {
+  width: 270px;
+  height: auto;
+}
+
+.content-body {
+  min-height: 300px;
+  margin: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.adress-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  p,
+  ul {
+    line-height: 150%;
+    font-size: 16px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.calculator-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.calculator-action-border {
+  border-radius: 12px;
+  flex-basis: 50%;
+}
+
+.calculator-action {
+  background-color: var(--black);
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  text-align: left;
+  padding: 10px;
+}
+
+.calculator-action-border.book .calculator-action::after,
+.calculator-action-border.whatsapp .calculator-action::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.calculator-action-border.book .calculator-action::after {
+  background-image: url('/assets/images/svg/calandar.svg');
+}
+
+.calculator-action-border.whatsapp .calculator-action::after {
+  background-image: url('/assets/images/svg/phone.svg');
+}
+
+.calculator-action-border.whatsapp {
+  background: var(--white);
+  padding: 3px;
+  border-radius: 12px;
+
+  .calculator-action {
+    background: rgb(129, 200, 99);
+    background: linear-gradient(142deg, rgba(129, 200, 99, 1) 0%, rgba(102, 168, 73, 1) 51%);
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.map {
+  border-radius: 10px;
+  padding: 2px;
+  margin: 2px;
+}
+
+.map iframe {
+  background-color: var(--bg-block);
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: -4px;
+}
