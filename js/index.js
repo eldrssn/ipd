@@ -11,6 +11,7 @@ import { showCalculator } from './animation/showCalculator.js';
 import { hideCalculator } from './animation/hideCalculator.js';
 import { dependencies } from './constants.js';
 import { setDependencies } from './utils/setDependencies.js';
+import { moveInfo } from './animation/moveInfo.js';
 
 window.addEventListener('load', () => {
   preload();
@@ -19,6 +20,7 @@ window.addEventListener('load', () => {
 
   const serviceText = document.querySelector('#service-text');
   const car = document.querySelector('.car');
+  const carWrapper = document.querySelector('.car-wrapper');
   const sponsorList = document.querySelector('.sponsor-list');
   const buttonCost = document.querySelector('.button');
   const calculator = document.querySelector('.calculation-section');
@@ -31,8 +33,13 @@ window.addEventListener('load', () => {
   const loop = horizontalLoop(boxes, {
     duration: 1.5,
     paused: true,
-    draggable: false,
+    draggable: true,
     center: true,
+    onThrowingComplete: (tl) => {
+      moveCar(tl);
+      setService(tl.current());
+      moveInfo();
+    },
     onChange: (element, index) => {
       activeElement && activeElement.classList.remove('active');
       element.classList.add('active');
@@ -70,7 +77,7 @@ window.addEventListener('load', () => {
 
   setService(loop.current());
 
-  boxes.forEach((box, i) =>
+  boxes.forEach((box, i) => {
     box.addEventListener(
       'click',
       throttle(() => {
@@ -81,8 +88,8 @@ window.addEventListener('load', () => {
           moveTitle(loop);
         }
       })
-    )
-  );
+    );
+  });
 
   document.addEventListener(
     'keydown',
@@ -101,6 +108,58 @@ window.addEventListener('load', () => {
         moveTitle(loop);
       }
     })
+  );
+
+  carWrapper.addEventListener(
+    'wheel',
+    throttle((event) => {
+      if (event.deltaX !== 0) {
+        if (event.deltaX > 0) {
+          loop.next({ duration: 0.4, ease: 'power1.inOut' });
+          setService(loop.current());
+          moveCar(loop);
+          moveTitle(loop);
+        } else {
+          loop.previous({ duration: 0.4, ease: 'power1.inOut' });
+          setService(loop.current());
+          moveCar(loop);
+          moveTitle(loop);
+        }
+      }
+    })
+  );
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carWrapper.addEventListener(
+    'touchstart',
+    (event) => {
+      touchStartX = event.touches[0].clientX;
+    },
+    { passive: true }
+  );
+
+  carWrapper.addEventListener(
+    'touchend',
+    (event) => {
+      touchEndX = event.changedTouches[0].clientX;
+
+      const swipeThreshold = 20;
+
+      if (touchEndX - touchStartX > swipeThreshold) {
+        loop.previous({ duration: 0.4, ease: 'power1.inOut' });
+        setService(loop.current());
+        moveCar(loop);
+        moveTitle(loop);
+      } else if (touchStartX - touchEndX > swipeThreshold) {
+        loop.next({ duration: 0.4, ease: 'power1.inOut' });
+        setService(loop.current());
+        moveCar(loop);
+        moveTitle(loop);
+      }
+    },
+    { passive: true }
   );
 
   const resetServices = () => {

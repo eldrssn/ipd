@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles/index.css" />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
-    ></script>
-    <script type="module" src="js/index.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" href="assets/images/background.jpg" as="image" />
-    <link rel="preload" href="assets/images/logo.png" as="image" />
-    <link rel="preload" href="assets/fonts/HelveticaNeueLight.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="assets/fonts/HelveticaNeueMedium.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="assets/images/logo-bg.jpg" as="image" />
-    <link rel="preload" href="assets/images/bg-block.jpg" as="image" />
-    <link rel="preload" href="assets/images/bg-header.png" as="image" />
-    <title>Integral Paint Defence - Protect Service</title>
-  </head>
-  <body class="main-page">
-    <header class="header">
-      <nav class="nav">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <meta name="description"
+    content="Detailed consultation with examples and individual attention to each client are the foundation of our company's approach" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+  <script defer src="js/utils/InertiaPlugin.js"></script>
+  <script type="module" src="js/index.js" async></script>
+  <script type="module" src="js/header.js" defer></script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" href="assets/images/slide.png" as="image" />
+  <link rel="preload" href="assets/images/background.webp" as="image" media="(min-width: 1281px)" />
+  <link rel="preload" href="assets/images/background@0,5x.webp" as="image" media="(max-width: 1280px)" />
+  <link rel="preload" href="assets/images/background-mobile.webp" as="image" media="(max-width: 768px)" />
+  <link rel="preload" href="assets/images/logo.png" as="image" />
+  <link rel="preload" href="assets/fonts/HelveticaNeueLight.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="assets/fonts/HelveticaNeueMedium.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="assets/images/logo-bg.png" as="image" media="(min-width: 1281px)" />
+  <link rel="preload" href="assets/images/logo-bg@0,5x.png" as="image" media="(max-width: 1280px)"/>
+  <link rel="preload" href="assets/images/bg-block.jpg" as="image" />
+  <link rel="preload" href="assets/images/bg-header.png" as="image" />
+  <link rel="preload" href="assets/images/paint-protection.png" as="image" />
+  <title>Integral Paint Defence - Protect Service</title>
+</head>
+
+<body class="main-page">
+  <header class="header">
+    <nav class="nav">
+      <a class="logo" href="/">
+        <img src="assets/images/logo.png" width="99px" height="35px" alt="Logo" />
+      </a>
+      <div class="menu">
         <a class="logo" href="/">
-          <img
-            src="assets/images/logo.png"
-            width="80px"
-            height="40px"
-            alt="Logo"
-          />
+          <img src="assets/images/logo.png" width="99px" height="35px" alt="Logo" />
         </a>
         <a href="/who-we-are.html">Who we are</a>
         <a href="/services.html">All Services</a>
@@ -35,239 +46,213 @@
         <a href="https://www.instagram.com/ipd.ae" target="_blank">
           <img src="assets/images/svg/inst.svg" alt="Instagram link" />
         </a>
-      </nav>
-    </header>
+        <button class="menu-close" type="button">
+          <span class="hidden">Close Menu</span>
 
-    <main>
-      <div class="highlight">
-        <img src="assets/images/slide.png" alt="slide" />
-
-        <div class="arrows">
-          <img
-            class="arrow"
-            src="assets/images/left-arrow.png"
-            width="40px"
-            height="80px"
-            alt="Arrow"
-          />
-          <img
-            class="arrow"
-            src="assets/images/right-arrow.png"
-            width="40px"
-            height="80px"
-            alt="Arrow"
-          />
-        </div>
+        </button>
       </div>
+      <button class="menu-button" type="button">
+        <span class="hidden">Open Menu</span>
+      </button>
+    </nav>
+  </header>
 
-      <div class="services">
+  <main>
+    <div class="highlight">
+      <img class="slide" src="assets/images/slide.png" alt="slide" />
+
+      <div class="arrows">
+        <img class="arrow left" src="assets/images/left-arrow.png" width="40px" height="80px" alt="Arrow" />
+        <img class="arrow right" src="assets/images/right-arrow.png" width="40px" height="80px" alt="Arrow" />
+      </div>
+    </div>
+
+    <div class="services">
       <!-- Внутри блоки формируются из JS -->
-      </div>
-      <div class="service-info">
-        <p id="service-text">
-          Color wrapping gives your vehicle a vibrant new look, with a wide
-          range of colors and finishes to choose from. Whether you prefer a bold
-          statement or a subtle change, color wrapping adds personality and
-          protection to your car, ensuring it stands out on the road.
-        </p>
+    </div>
+    <div class="arrows-mobile">
+      <img class="arrow left" src="assets/images/svg/arrow-mobile.svg" width="30px" height="100px" alt="Arrow" />
+      <img class="arrow right" src="assets/images/svg/arrow-mobile.svg" width="30px" height="100px" alt="Arrow" />
+    </div>
+    <div class="service-info">
+      <p id="service-text">
+        Color wrapping gives your vehicle a vibrant new look, with a wide
+        range of colors and finishes to choose from. Whether you prefer a bold
+        statement or a subtle change, color wrapping adds personality and
+        protection to your car, ensuring it stands out on the road.
+      </p>
 
-        <div class="button-wrap">
-          <button class="button" type="button">Approximate the Cost</button>
-        </div>
+      <div class="button-wrap">
+        <button class="button" type="button">Approximate the Cost</button>
       </div>
+    </div>
 
-      <div class="car-wrapper">
-        <div class="car-shadow"></div>
-        <div class="car">
-      <!-- Внутри блоки формируются из JS -->
+    <div class="car-wrapper">
+      <div class="car-shadow"></div>
+      <div class="car">
+        <!-- Внутри блоки формируются из JS -->
       </div>
-      </div>
+    </div>
 
-      <div class="bottom-wrapper">
-        <ul class="sponsor-list">
-      <!-- Внутри блоки формируются из JS -->
+    <div class="bottom-wrapper">
+      <ul class="sponsor-list">
+        <!-- Внутри блоки формируются из JS -->
       </ul>
-      </div>
-      <div id="preloadedImages"></div>
+    </div>
+    <div id="preloadedImages"></div>
 
-      <section class="calculation-section">
-        <button type="button" class="close-button"><img src='assets/images/svg/close.svg' alt="Close Button" width="60" height="60"/> </button>
-        <div class="calculator-wrapper">
-          <div class="type-img">
-            <img src="assets/images/sedan.png" />
-          </div>
+    <section class="calculation-section">
+      <button type="button" class="close-button"></button>
+      <div class="calculator-wrapper">
+        <div class="type-img">
+          <img src="assets/images/sedan.png" />
+        </div>
 
-          <div class="calculator">
-            <div class="calculator-inputs-border">
-              <div class="calculator-inputs">
-                <div class="calculator-inputs-header-border">
-                  <h1 class="calculator-inputs-header">
-                    <strong>Cost</strong> Estimation
-                  </h1>
-                </div>
+        <div class="calculator">
+          <div class="calculator-inputs-border">
+            <div class="calculator-inputs">
+              <div class="calculator-inputs-header-border">
+                <h1 class="calculator-inputs-header">
+                  <strong>Cost</strong> Estimation
+                </h1>
+              </div>
 
-                <form class="calculator-inputs-body">
-                  <p class="calculator-text">
-                    Choose your <span class="highlighted">Vehicle Type</span>
-                  </p>
+              <form class="calculator-inputs-body">
+                <p class="calculator-text">
+                  Choose your <span class="highlighted">Vehicle Type</span>
+                </p>
 
-                  <div class="custom-select-border">
-                    <div class="custom-select">
-                      <button
-                        class="select-button"
-                        role="combobox"
-                        aria-labelledby="select button"
-                        aria-haspopup="listbox"
-                        aria-expanded="false"
-                        aria-controls="select-dropdown"
-                      >
-                        <div class="selected-value">
+                <div class="custom-select-border">
+                  <div class="custom-select">
+                    <button class="select-button" role="combobox" aria-labelledby="select button"
+                      aria-haspopup="listbox" aria-expanded="false" aria-controls="select-dropdown">
+                      <div class="selected-value">
+                        <p>
+                          <img src="assets/images/sedan-icon.png" alt="Sedan Icon" />
+                          <span class="select-text"> Sedan / Coupe </span>
+                        </p>
+                      </div>
+                      <span class="arrow-down"></span>
+                    </button>
+                    <ul class="select-dropdown" role="listbox" id="select-dropdown">
+                      <li role="option">
+                        <input type="radio" id="sedan" name="vehicle-type" />
+                        <label for="sedan">
                           <p>
-                            <img
-                              src="assets/images/sedan-icon.png"
-                              alt="Sedan Icon"
-                            />
+                            <img src="assets/images/sedan-icon.png" alt="Sedan Icon" width="80px" height="40px" />
                             <span class="select-text"> Sedan / Coupe </span>
                           </p>
-                        </div>
-                        <span class="arrow-down"></span>
-                      </button>
-                      <ul
-                        class="select-dropdown"
-                        role="listbox"
-                        id="select-dropdown"
-                      >
-                        <li role="option">
-                          <input type="radio" id="sedan" name="vehicle-type" />
-                          <label for="sedan">
-                            <p>
-                              <img
-                                src="assets/images/sedan-icon.png"
-                                alt="Sedan Icon"
-                              />
-                              <span class="select-text"> Sedan / Coupe </span>
-                            </p>
-                          </label>
-                        </li>
-                        <li role="option">
-                            <input
-                              type="radio"
-                              id="sports"
-                              name="vehicle-type"
-                            />
-                            <label for="sport">
-                              <p>
-                                <img
-                                  src="assets/images/sport-icon.png"
-                                  alt="Sedan Icon"
-                                />
-                                <span class="select-text"> Sports Car </span>
-                              </p>
-                            </label>
+                        </label>
+                      </li>
+                      <li role="option">
+                        <input type="radio" id="sports" name="vehicle-type" />
+                        <label for="sport">
+                          <p>
+                            <img src="assets/images/sport-icon.png" alt="Sports Car Icon" width="80px" height="40px" />
+                            <span class="select-text"> Sports Car </span>
                           </p>
-                        </li>
-
-                        <li role="option">
-                          <input
-                            type="radio"
-                            id="motorcycle"
-                            name="vehicle-type"
-                          />
-                          <label for="motorcycle">
-                            <p>
-                              <img
-                                src="assets/images/motorcycle-icon.png"
-                                alt="Sedan Icon"
-                              />
-                              <span class="select-text"> Motorcycle </span>
-                            </p>
-                          </label>
-                        </li>
-
-                        <li role="option">
-                          <input
-                            type="radio"
-                            id="suv"
-                            name="vehicle-type"
-                          />
-                          <label for="suv">
-                            <p>
-                              <img
-                                src="assets/images/suv-icon.png"
-                                alt="SUV Icon"
-                              />
-                              <span class="select-text"> SUV </span>
-                            </p>
-                          </label>
+                        </label>
                         </p>
                       </li>
-                      </ul>
-                    </div>
+
+                      <li role="option">
+                        <input type="radio" id="motorcycle" name="vehicle-type" />
+                        <label for="motorcycle">
+                          <p>
+                            <img src="assets/images/motorcycle-icon.png" alt="Motorcycle Icon" width="80px"
+                              height="40px" />
+                            <span class="select-text"> Motorcycle </span>
+                          </p>
+                        </label>
+                      </li>
+
+                      <li role="option">
+                        <input type="radio" id="suv" name="vehicle-type" />
+                        <label for="suv">
+                          <p>
+                            <img src="assets/images/suv-icon.png" alt="SUV Icon" width="80px" height="40px" />
+                            <span class="select-text"> SUV </span>
+                          </p>
+                        </label>
+                        </p>
+                      </li>
+                    </ul>
                   </div>
+                </div>
 
-                  <hr class="divider" />
+                <hr class="divider" />
 
-                  <p class="calculator-text">
-                    Choose the <span class="highlighted">Desired Services</span>
-                  </p>
+                <p class="calculator-text">
+                  Choose the <span class="highlighted">Desired Services</span>
+                </p>
 
-                  <div class="calculator-services-border">
-                    <div class="calculator-services">
-                      <!-- Блок заполняется через JS -->
-                    </div>
+                <div class="calculator-services-border">
+                  <div class="calculator-services">
+                    <!-- Блок заполняется через JS -->
                   </div>
+                </div>
 
-                  <p class="calculator-text">
-                    <span class="highlighted">
-                      Complimentary carwash included with every service*
-                      </span
-                    >
-                  </p>
+                <p class="calculator-text">
+                  <span class="highlighted">
+                    Complimentary carwash included with every service*
+                  </span>
+                </p>
 
-                  
-                  <button class="calculate-button" type="submit">Calculate</button>
-                </form>
+
+                <button class="calculate-button" type="submit">Calculate</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="calculator-results">
+            <div class="calculator-result-border">
+              <div class="calculator-result">
+                <p class="calculator-result-header">
+                  <strong>Estimated</strong> Cost
+                </p>
+                <p id="price" class="calculator-result-info">
+                  Choose services
+                </p>
               </div>
             </div>
-
-            <div class="calculator-results">
-              <div class="calculator-result-border">
-                <div class="calculator-result">
-                  <p class="calculator-result-header">
-                    <strong>Estimated</strong> Cost
-                  </p>
-                  <p id="price" class="calculator-result-info">
-                    Choose services
-                  </p>
-                </div>
+            <div class="calculator-result-border">
+              <div class="calculator-result">
+                <p class="calculator-result-header">
+                  <strong>Estimated</strong> Time
+                </p>
+                <p id="time" class="calculator-result-info">
+                  Choose services
+                </p>
               </div>
-              <div class="calculator-result-border">
-                <div class="calculator-result">
-                  <p class="calculator-result-header">
-                    <strong>Estimated</strong> Time
-                  </p>
-                  <p id="time" class="calculator-result-info">
-                    Choose services
-                  </p>
-                </div>
+            </div>
+            <div class="calculator-actions">
+              <div class="calculator-action-border book">
+                <button class="calculator-action" type="button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/enver-k6po/30min'});return false;">
+                  <strong>Book</strong> Your Service
+                </button>
               </div>
-
-              <div class="calculator-actions">
-                <div class="calculator-action-border book">
-                  <button class="calculator-action" type="button">
-                    <strong>Book</strong> Your Service
-                  </button>
-                </div>
-                <div class="calculator-action-border whatsapp">
-                  <a href="https://wa.clck.bar/971585458446" target="_blank" class="calculator-action">
-                    <strong>Or</strong> WhatsApp Us
-                  </a>
-                </div>
+              <div class="calculator-action-border whatsapp">
+                <a href="https://wa.clck.bar/971585458446" target="_blank" class="calculator-action">
+                  <strong>Or</strong> WhatsApp Us
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('load', (event) => {
+      gsap.registerPlugin(Draggable, InertiaPlugin);
+
+      const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(link);
+    });
+  </script>
+</body>
+
 </html>

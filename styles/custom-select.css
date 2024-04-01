@@ -20,16 +20,17 @@
   border-radius: 0.25rem;
   cursor: pointer;
 
-  background: rgb(218,218,218);
-background: linear-gradient(180deg, rgba(218,218,218,1) 0%, rgba(252,252,252,1) 100%);
+  background: rgb(218, 218, 218);
+  background: linear-gradient(180deg, rgba(218, 218, 218, 1) 0%, rgba(252, 252, 252, 1) 100%);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight:500;
+  font-weight: 500;
 }
 
-.selected-value, .select-dropdown li {
+.selected-value,
+.select-dropdown li {
   text-align: left;
   width: 100%;
 
@@ -48,12 +49,12 @@ background: linear-gradient(180deg, rgba(218,218,218,1) 0%, rgba(252,252,252,1) 
 }
 
 .arrow-down {
-  transition: transform ease-in-out 0.3s; 
+  transition: transform ease-in-out 0.3s;
   width: 17px;
-  height:17px;
+  height: 17px;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('assets/images/svg/arrow.svg');
+  background-image: url('/assets/images/svg/arrow.svg');
 }
 
 .select-dropdown {
@@ -61,8 +62,8 @@ background: linear-gradient(180deg, rgba(218,218,218,1) 0%, rgba(252,252,252,1) 
   list-style: none;
   width: 100%;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background: rgb(218,218,218);
-background: linear-gradient(180deg, rgba(218,218,218,1) 0%, rgba(252,252,252,1) 100%);
+  background: rgb(218, 218, 218);
+  background: linear-gradient(180deg, rgba(218, 218, 218, 1) 0%, rgba(252, 252, 252, 1) 100%);
   border-radius: 4px;
   margin-top: 10px;
   max-height: 250px;

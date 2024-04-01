@@ -61,3 +61,10 @@
 .checkbox-wrapper input:checked ~ .checkmark:before {
   opacity: 1;
 }
+
+@media screen and (max-width: 500px) {
+.checkbox-wrapper .checkmark::before {
+  width: 20px;
+  right: -36px
+}
+}

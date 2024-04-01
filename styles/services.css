@@ -16,7 +16,6 @@
 }
 
 .main {
-  overflow: auto;
   padding: 0 10px;
 }
 
@@ -118,6 +117,11 @@
   background: rgb(33, 53, 64);
   background: linear-gradient(90deg, rgba(33, 53, 64, 1) 0%, rgba(34, 39, 43, 1) 24%, rgba(35, 35, 40, 1) 47%, rgba(53, 38, 53, 1) 71%, rgba(61, 12, 85, 1) 100%);
   color: #9f99a0;
+
+  input[type="radio"] {
+    display: none;
+  }
+  
 }
 
 .service-item {
@@ -129,6 +133,10 @@
 
 .service-item:hover {
   backdrop-filter: brightness(110%);
+}
+
+.select-dropdown label {
+  cursor: pointer;
 }
 
 .service-item.active {
@@ -161,4 +169,101 @@
       content: '⚬'
     }
   }
+}
+
+.select-button-border {
+  display: none;
+}
+
+@media screen and (max-width: 1280px) {
+  .body {
+    background: url('/assets/images/bg-pages@0,5x.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 768px) {
+  .body {
+    background: url('/assets/images/bg-pages-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+.content-body {
+  flex-direction: column;
+}
+
+.select-button-border {
+  display: block;
+  padding: 1px;
+  background: linear-gradient(to right, var(--purpule), var(--blue));
+  border-radius: 12px;
+}
+
+.select-button {
+  border-radius: 12px;
+  background: rgb(33, 53, 64);
+  background: linear-gradient(90deg, rgba(33, 53, 64, 1) 0%, rgba(34, 39, 43, 1) 24%, rgba(35, 35, 40, 1) 47%, rgba(53, 38, 53, 1) 71%, rgba(61, 12, 85, 1) 100%);
+  color: var(--white);
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.service-list {
+  width: 100%;
+}
+
+.arrow-down {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: center; 
+  right: 15px;
+  display: block;
+  transition: transform ease-in-out 0.3s;
+  width: 17px;
+  height: 17px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/images/svg/arrow.svg');
+}
+
+.custom-select.active .arrow-down {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  top: 56px;
+}
+
+
+.select-dropdown {
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  margin-top: 10px;
+  transition: 0.5s ease;
+
+  opacity: 0;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.select-dropdown > input[type="radio"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+.custom-select.active .select-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
 }

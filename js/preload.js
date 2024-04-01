@@ -29,16 +29,14 @@ export const preload = () => {
     return accum;
   }, {});
 
-  window.addEventListener('load', () => {
-    preloadedVehicleTypeseImgs = vehicleTypes.reduce((accum, next) => {
-      const img = document.createElement('img');
-      img.alt = 'Vehicle Type';
-      img.src = `assets/images/${next}.png`;
-      preloadedImages.append(img);
-      accum[next] = img;
-      return accum;
-    }, {});
-  });
+  preloadedVehicleTypeseImgs = vehicleTypes.reduce((accum, next) => {
+    const img = document.createElement('img');
+    img.alt = 'Vehicle Type';
+    img.src = `assets/images/${next}.png`;
+    preloadedImages.append(img);
+    accum[next] = img;
+    return accum;
+  }, {});
 };
 
 export { preloadedVehicleTypeseImgs, preloadedCarImgs, preloadedSponsorsImgs };

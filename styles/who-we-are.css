@@ -17,6 +17,7 @@
 
 .main {
   overflow: auto;
+  padding: 10px;
 }
 
 .main::before {
@@ -30,6 +31,7 @@
   filter: blur(90px);
   height: 80vh;
   width: 50vw;
+  min-width: 350px;
   border-radius: 50%;
   z-index: 0;
 }
@@ -42,7 +44,7 @@
 }
 
 .content-wrapper-border {
-  width: 550px;
+  max-width: 550px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -148,4 +150,21 @@
   font-size: 16px;
   letter-spacing: 1px;
   color: var(--black)
+}
+
+@media screen and (max-width: 1280px) {
+  .body {
+    background: url('/assets/images/bg-pages@0,5x.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 768px) {
+  .body {
+    background: url('/assets/images/bg-pages-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }

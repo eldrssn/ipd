@@ -188,6 +188,70 @@ export function horizontalLoop(items, config) {
     tl.vars.onReverseComplete();
     tl.reverse();
   }
+  if (config.draggable && typeof Draggable === 'function') {
+    proxy = document.createElement('div');
+    let wrap = gsap.utils.wrap(0, 1),
+      ratio,
+      startProgress,
+      draggable,
+      dragSnap,
+      lastSnap,
+      initChangeX,
+      wasPlaying,
+      align = () =>
+        tl.progress(
+          wrap(startProgress + (draggable.startX - draggable.x) * ratio)
+        ),
+      syncIndex = () => tl.closestIndex(true);
+    typeof InertiaPlugin === 'undefined' &&
+      console.warn(
+        'InertiaPlugin required for momentum-based scrolling and snapping. https://greensock.com/club'
+      );
+    draggable = Draggable.create(proxy, {
+      trigger: items[0].parentNode,
+      type: 'x',
+      onPressInit() {
+        let x = this.x;
+        gsap.killTweensOf(tl);
+        wasPlaying = !tl.paused();
+        tl.pause();
+        startProgress = tl.progress();
+        refresh();
+        ratio = 1 / totalWidth;
+        initChangeX = startProgress / -ratio - x;
+        gsap.set(proxy, { x: startProgress / -ratio });
+      },
+      onDrag: align,
+      onThrowUpdate: align,
+      overshootTolerance: 0,
+      inertia: true,
+      snap(value) {
+        //note: if the user presses and releases in the middle of a throw, due to the sudden correction of proxy.x in the onPressInit(), the velocity could be very large, throwing off the snap. So sense that condition and adjust for it. We also need to set overshootTolerance to 0 to prevent the inertia from causing it to shoot past and come back
+        if (Math.abs(startProgress / -ratio - this.x) < 10) {
+          return lastSnap + initChangeX;
+        }
+        let time = -(value * ratio) * tl.duration(),
+          wrappedTime = timeWrap(time),
+          snapTime = times[getClosest(times, wrappedTime, tl.duration())],
+          dif = snapTime - wrappedTime;
+        Math.abs(dif) > tl.duration() / 2 &&
+          (dif += dif < 0 ? tl.duration() : -tl.duration());
+        lastSnap = (time + dif) / tl.duration() / -ratio;
+        direction = draggable.startX - draggable.x < 0 ? 'right' : 'left';
+        return lastSnap;
+      },
+      onRelease() {
+        syncIndex();
+        draggable.isThrowing && (indexIsDirty = true);
+      },
+      onThrowComplete: () => {
+        syncIndex();
+        wasPlaying && tl.play();
+        config.onThrowingComplete(tl)
+      },
+    })[0];
+    tl.draggable = draggable;
+  }
   tl.closestIndex(true);
   tl.direction = () => direction;
   lastIndex = curIndex;

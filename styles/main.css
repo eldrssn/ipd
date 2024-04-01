@@ -11,7 +11,7 @@
   --slide-width: 25vw;
 
   font-family: 'Helvetica Neue', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #202020;
+  background-color: #060606;
   font-size: 14px;
   color: var(--white);
 }
@@ -40,4 +40,8 @@ button {
   color: inherit;
   cursor: pointer;
   appearance: none;
+}
+
+.hidden {
+  display: none;
 }

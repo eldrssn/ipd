@@ -38,7 +38,8 @@
 .content-header-border,
 .content-wrapper-border,
 .service-body-wrapper,
-.calculator-action-border, .map  {
+.calculator-action-border,
+.map {
   padding: 1px;
   background: linear-gradient(to right, var(--purpule), var(--blue));
 }
@@ -203,4 +204,44 @@
   border-radius: 10px;
   width: 100%;
   margin-bottom: -4px;
+}
+
+@media screen and (max-width: 1280px) {
+  .body {
+    background: url('/assets/images/bg-pages@0,5x.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 768px) {
+  .body {
+    background: url('/assets/images/bg-pages-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .content-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .adress-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+
+  .calculator-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .calculator-action-border {
+    min-width: 200px;
+  }
+
+  .map iframe {
+    height: 400px;
+  }
 }

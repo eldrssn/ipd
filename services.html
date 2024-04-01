@@ -2,15 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="stylesheet" href="styles/services.css" />
+    <meta
+      name="description"
+      content="Detailed consultation with examples and individual attention to each client are the foundation of our company's approach"
+    />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
     ></script>
+    <script type="module" src="js/header.js" defer></script>
     <script type="module" src="js/services-page.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" href="assets/images/logo.png" as="image" />
-    <link rel="preload" href="assets/images/bg-pages.jpg" as="image" />
+    <link
+      rel="preload"
+      href="assets/images/bg-pages.jpg"
+      as="image"
+      media="(min-width: 1281px)"
+    />
+    <link
+      rel="preload"
+      href="assets/images/bg-pages@0,5x.jpg"
+      as="image"
+      media="(max-width: 1280px)"
+    />
+    <link
+      rel="preload"
+      href="assets/images/bg-pages-mobile.jpg"
+      as="image"
+      media="(max-width: 768px)"
+    />
     <link rel="preload" href="assets/images/bg-block.jpg" as="image" />
     <link
       rel="preload"
@@ -41,17 +64,33 @@
         <a class="logo" href="/">
           <img
             src="assets/images/logo.png"
-            width="80px"
-            height="40px"
+            width="99px"
+            height="35px"
             alt="Logo"
           />
         </a>
-        <a href="/who-we-are.html">Who we are</a>
-        <a href="/services.html">All Services</a>
-        <a href="/contacts.html">Contacts & Location</a>
-        <a href="https://www.instagram.com/ipd.ae" target="_blank">
-          <img src="assets/images/svg/inst.svg" alt="Instagram link" />
-        </a>
+        <div class="menu">
+          <a class="logo" href="/">
+            <img
+              src="assets/images/logo.png"
+              width="99px"
+              height="35px"
+              alt="Logo"
+            />
+          </a>
+          <a href="/who-we-are.html">Who we are</a>
+          <a href="/services.html">All Services</a>
+          <a href="/contacts.html">Contacts & Location</a>
+          <a href="https://www.instagram.com/ipd.ae" target="_blank">
+            <img src="assets/images/svg/inst.svg" alt="Instagram link" />
+          </a>
+          <button class="menu-close" type="button">
+            <span class="hidden">Close Menu</span>
+          </button>
+        </div>
+        <button class="menu-button" type="button">
+          <span class="hidden">Open Menu</span>
+        </button>
       </nav>
     </header>
 
@@ -63,32 +102,80 @@
           </div>
 
           <div class="content-body">
-            <div class="service-list-border">
-              <ul class="service-list">
-                <li class="service-item" data-id="transparent-ppf">
-                  Paint Protection Film
-                </li>
-                <li class="service-item" data-id="colored-ppf">
-                  Colored Paint Protection Film
-                </li>
-                <li class="service-item" data-id="wrapping">Color Wrapping</li>
-                <li class="service-item" data-id="exterior-coating">
-                  Exterior Ceramic Coating
-                </li>
-                <li class="service-item" data-id="interior-coating">
-                  Interior Ceramic Coating
-                </li>
-                <li class="service-item" data-id="tinting">
-                  Ceramic Window Tinting
-                </li>
-                <li class="service-item" data-id="cleaning">
-                  Interior Cleaning
-                </li>
-                <li class="service-item" data-id="polishing">
-                  Exterior Polishing
-                </li>
-                <li class="service-item" data-id="rim">Rim Protection</li>
-              </ul>
+            <div class="custom-select">
+              <div class="select-button-border">
+                <button
+                  class="select-button"
+                  role="combobox"
+                  aria-labelledby="select button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-controls="select-dropdown"
+                >
+                  <div class="selected-value">Paint Protection Film</div>
+                  <span class="arrow-down"></span>
+                </button>
+              </div>
+
+              <div class="service-list-border select-dropdown">
+                <ul class="service-list">
+                  <li
+                    role="option"
+                    class="service-item"
+                    data-id="transparent-ppf"
+                  >
+                    <input type="radio" id="transparent-ppf" name="service" />
+                    <label for="transparent-ppf"> Paint Protection Film </label>
+                  </li>
+
+                  <li role="option" class="service-item" data-id="colored-ppf">
+                    <input type="radio" id="colored-ppf" name="service" />
+                    <label for="colored-ppf">
+                      Colored Paint Protection Film
+                    </label>
+                  </li>
+                  <li role="option" class="service-item" data-id="wrapping">
+                    <input type="radio" id="wrapping" name="service" />
+                    <label for="wrapping"> Color Wrapping </label>
+                  </li>
+                  <li
+                    role="option"
+                    class="service-item"
+                    data-id="exterior-coating"
+                  >
+                    <input type="radio" id="exterior-coating" name="service" />
+                    <label for="exterior-coating">
+                      Exterior Ceramic Coating
+                    </label>
+                  </li>
+                  <li
+                    role="option"
+                    class="service-item"
+                    data-id="interior-coating"
+                  >
+                    <input type="radio" id="interior-coating" name="service" />
+                    <label for="interior-coating">
+                      Interior Ceramic Coating
+                    </label>
+                  </li>
+                  <li role="option" class="service-item" data-id="tinting">
+                    <input type="radio" id="tinting" name="service" />
+                    <label for="tinting"> Ceramic Window Tinting </label>
+                  </li>
+                  <li role="option" class="service-item" data-id="cleaning">
+                    <input type="radio" id="cleaning" name="service" />
+                    <label for="cleaning"> Interior Cleaning </label>
+                  </li>
+                  <li role="option" class="service-item" data-id="polishing">
+                    <input type="radio" id="polishing" name="service" />
+                    <label for="polishing"> Exterior Polishing </label>
+                  </li>
+                  <li role="option" class="service-item" data-id="rim">
+                    <input type="radio" id="rim" name="service" />
+                    <label for="rim"> Rim Protection </label>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="service-body-wrapper"></div>
           </div>
@@ -96,7 +183,7 @@
       </div>
     </main>
 
-    <template id="transparent-ppf">
+    <template id="transparent-ppf-text">
       <div class="service-body">
         <h2>Paint Protection Film</h2>
         <p>
@@ -113,7 +200,7 @@
       </div>
     </template>
 
-    <template id="colored-ppf">
+    <template id="colored-ppf-text">
       <div class="service-body">
         <h2>Colored Paint Protection Film</h2>
         <p>
@@ -124,7 +211,7 @@
       </div>
     </template>
 
-    <template id="wrapping">
+    <template id="wrapping-text">
       <div class="service-body">
         <h2>Color Wrapping</h2>
         <p>
@@ -136,7 +223,7 @@
       </div>
     </template>
 
-    <template id="exterior-coating">
+    <template id="exterior-coating-text">
       <div class="service-body">
         <h2>Exterior Ceramic Coating</h2>
         <p>
@@ -151,7 +238,7 @@
       </div>
     </template>
 
-    <template id="interior-coating">
+    <template id="interior-coating-text">
       <div class="service-body">
         <h2>Interior Ceramic Coating</h2>
         <p>
@@ -164,7 +251,7 @@
       </div>
     </template>
 
-    <template id="tinting">
+    <template id="tinting-text">
       <div class="service-body">
         <h2>Ceramic Window Tinting</h2>
         <p>
@@ -181,7 +268,7 @@
       </div>
     </template>
 
-    <template id="cleaning">
+    <template id="cleaning-text">
       <div class="service-body">
         <h2>Interior Cleaning</h2>
         <p>
@@ -198,7 +285,7 @@
       </div>
     </template>
 
-    <template id="polishing">
+    <template id="polishing-text">
       <div class="service-body">
         <h2>Exterior Polishing</h2>
         <p>
@@ -226,7 +313,7 @@
       </div>
     </template>
 
-    <template id="rim">
+    <template id="rim-text">
       <div class="service-body">
         <h2>Rim Protection. Alloygators</h2>
         <p>
