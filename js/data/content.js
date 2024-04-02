@@ -4,7 +4,7 @@ export const content = [
     title: 'exterior ceramic coating and polishing',
     slug: 'exterior-coating',
     text: `Polishing removes imperfections and restore shine, while ceramic
-    coating offers lasting protection against damadge, keeping your car
+    coating offers lasting protection against damage, keeping your car
     pristine.
     This combo ensures a showroom-quality finish, enhancing both
     aesthetics and durability.`,

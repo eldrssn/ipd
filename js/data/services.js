@@ -57,11 +57,6 @@ export const servicesData = {
     {
       service: 'Rim Protection',
       slug: 'rim-protection',
-      price: 750,
-      time: {
-        count: [40],
-        units: 'minutes',
-      },
     },
   ],
   sedan: [
