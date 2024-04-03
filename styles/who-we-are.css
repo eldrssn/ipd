@@ -6,7 +6,7 @@
   height: 100%;
   min-height: 100vh;
   width: 100%;
-  background: url('/assets/images/bg-pages.jpg');
+  background: url('/images/bg-pages.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -61,7 +61,7 @@
   width: 100%;
   background-color: var(--bg-block);
   height: 100%;
-  background-image: url('/assets/images/bg-block.jpg');
+  background-image: url('/images/bg-block.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -85,7 +85,7 @@
   height: 100%;
   text-transform: uppercase;
   background: rgb(106, 190, 253);
-  background: url('/assets/images/bg-header.png'), linear-gradient(180deg, rgba(100, 195, 255, 1) 0%, rgba(198, 238, 254, 1) 14%, rgba(198, 238, 254, 1) 24%, rgba(100, 195, 255, 1) 38%, rgba(100, 195, 255, 1) 53%, rgba(198, 238, 254, 1) 68%, rgba(200, 191, 230, 1) 84%, rgba(205, 58, 179, 1) 100%);
+  background: url('/images/bg-header.png'), linear-gradient(180deg, rgba(100, 195, 255, 1) 0%, rgba(198, 238, 254, 1) 14%, rgba(198, 238, 254, 1) 24%, rgba(100, 195, 255, 1) 38%, rgba(100, 195, 255, 1) 53%, rgba(198, 238, 254, 1) 68%, rgba(200, 191, 230, 1) 84%, rgba(205, 58, 179, 1) 100%);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -154,7 +154,7 @@
 
 @media screen and (max-width: 1280px) {
   .body {
-    background: url('/assets/images/bg-pages@0,5x.jpg');
+    background: url('/images/bg-pages@0,5x.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -162,7 +162,7 @@
 }
 @media screen and (max-width: 768px) {
   .body {
-    background: url('/assets/images/bg-pages-mobile.jpg');
+    background: url('/images/bg-pages-mobile.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -23,7 +23,7 @@ export const preload = () => {
   preloadedSponsorsImgs = sponsorNames.reduce((accum, next) => {
     const img = document.createElement('img');
     img.alt = next;
-    img.src = `assets/images/${next}.png`;
+    img.src = `/images/${next}.png`;
     preloadedImages.append(img);
     accum[next] = img;
     return accum;
@@ -32,7 +32,7 @@ export const preload = () => {
   preloadedVehicleTypeseImgs = vehicleTypes.reduce((accum, next) => {
     const img = document.createElement('img');
     img.alt = 'Vehicle Type';
-    img.src = `assets/images/${next}.png`;
+    img.src = `/images/${next}.png`;
     preloadedImages.append(img);
     accum[next] = img;
     return accum;

@@ -2,7 +2,7 @@
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background: url('/assets/images/logo-bg.png');
+  background: url('/images/logo-bg.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@
 
 .close-button {
   position: fixed;
-  background: url('/assets/images/svg/close.svg');
+  background: url('/images/svg/close.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -101,7 +101,7 @@
   border-radius: 12px;
   background-color: var(--bg-block);
   height: 100%;
-  background-image: url('/assets/images/bg-block.jpg');
+  background-image: url('/images/bg-block.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -121,7 +121,7 @@
   height: 100%;
   text-transform: uppercase;
   background: rgb(106, 190, 253);
-  background: url('/assets/images/bg-header.png'), linear-gradient(180deg, rgba(100, 195, 255, 1) 0%, rgba(198, 238, 254, 1) 14%, rgba(198, 238, 254, 1) 24%, rgba(100, 195, 255, 1) 38%, rgba(100, 195, 255, 1) 53%, rgba(198, 238, 254, 1) 68%, rgba(200, 191, 230, 1) 84%, rgba(205, 58, 179, 1) 100%);
+  background: url('/images/bg-header.png'), linear-gradient(180deg, rgba(100, 195, 255, 1) 0%, rgba(198, 238, 254, 1) 14%, rgba(198, 238, 254, 1) 24%, rgba(100, 195, 255, 1) 38%, rgba(100, 195, 255, 1) 53%, rgba(198, 238, 254, 1) 68%, rgba(200, 191, 230, 1) 84%, rgba(205, 58, 179, 1) 100%);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -204,11 +204,11 @@
 }
 
 .calculator-action-border.book .calculator-action::after {
-  background-image: url('/assets/images/svg/calandar.svg');
+  background-image: url('/images/svg/calandar.svg');
 }
 
 .calculator-action-border.whatsapp .calculator-action::after {
-  background-image: url('/assets/images/svg/phone.svg');
+  background-image: url('/images/svg/phone.svg');
 }
 
 .calculator-action-border.whatsapp {
@@ -301,7 +301,7 @@
 @media screen and (max-width: 1280px) {
 
 .calculation-section {
-  background: url('/assets/images/logo-bg@0,5x.png');
+  background: url('/images/logo-bg@0,5x.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

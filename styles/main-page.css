@@ -1,6 +1,6 @@
 .main-page {
   height: 100vh;
-  background: url('/assets/images/background.webp');
+  background: url('/images/background.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -148,7 +148,7 @@ display: none;
 }
 
 .car-shadow {
-  background: url('/assets/images/car-shadow.png');
+  background: url('/images/car-shadow.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -199,7 +199,7 @@ display: none;
 
 @media screen and (max-width: 1280px) {
   .main-page {
-    background: url('/assets/images/background@0,5x.webp');
+    background: url('/images/background@0,5x.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -254,7 +254,7 @@ display: none;
 @media screen and (max-width: 768px) {
   .main-page {
     height: 100svh;
-    background: url('/assets/images/background-mobile.webp');
+    background: url('/images/background-mobile.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

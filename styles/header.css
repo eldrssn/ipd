@@ -73,7 +73,7 @@
 }
   .menu {
     background-color: var(--bg-block);
-    background: url('/assets/images/bg-block.jpg');
+    background: url('/images/bg-block.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -109,7 +109,7 @@
   .menu-button {
     width: 35px;
     height: 35px;
-    background: url('/assets/images/svg/menu.svg');
+    background: url('/images/svg/menu.svg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -121,7 +121,7 @@
     right: 20px;
     width: 40px;
     height: 40px;
-    background: url('/assets/images/svg/close.svg');
+    background: url('/images/svg/close.svg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
