@@ -53,12 +53,12 @@ The website is fully responsive and optimized for all devices, from desktop comp
 
 ## Live 📍
 
-[Link to your website](https://ipd-delta.vercel.app/)
+[https://ipd-delta.vercel.app/](https://ipd-delta.vercel.app/)
 
 ## Installation 💾
 
 ```bash
-git clone git@github.com:your-username/your-repo.git
+git clone git@github.com:eldrssn/ipd.git
 npm install
 npm run dev
 ```
