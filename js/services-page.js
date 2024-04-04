@@ -58,12 +58,10 @@ window.addEventListener('load', () => {
         'aria-expanded',
         selectBtn.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
       );
-      console.log('btn');
     });
 
     optionsList.forEach((option) => {
       function handler(e) {
-        console.log('option');
         if (e.type === 'click' && e.clientX !== 0 && e.clientY !== 0) {
           optionsList.forEach((el) =>
             el.querySelector('input').removeAttribute('checked')
